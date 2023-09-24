@@ -101,7 +101,7 @@ footer {
 
 .slider {
   width: 80vw;
-  /* height: 23vh; */
+  height: 23vh;
   margin: 12px auto;
   overflow: hidden;
 }
