@@ -1,0 +1,20 @@
+{
+  "name": "college-bazar",
+  "version": "1.0.0",
+  "description": "<<<<<<< HEAD\r  This is a web development project, an ecommerce website functioning as a platform for the college students.\r > We are aware of the competitors we have like bigger e-commerce websites like Quikr.com, Olx.com and we even found a similar idea from last decade which was unsuccessful named fratmart.com whose domain is now available for purchase.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "ejs-mate": "^4.0.0",
+    "express": "^4.18.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^7.5.2",
+    "path": "^0.12.7"
+  }
+}
