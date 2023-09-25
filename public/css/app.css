@@ -9,12 +9,9 @@
   padding: 0;
 }
 
-header {
+nav {
   background: var(--main-bg-color);
   font-family: "Lato", sans-serif;
-}
-
-nav {
   display: flex;
 }
 

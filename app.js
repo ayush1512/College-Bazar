@@ -18,16 +18,16 @@ useUnifiedTopology: true})
     console.log('MONGO open');
 })
 .catch(err =>{
-    console.log('OH NO MONGO CONNECTIO ERROR!!!!!!!!!!!!!!');
+    console.log('CONNECTIO ERROR!!!!!!!!!!!!!!');
     console.log(err);
 })
 
-
+// Home Page
 app.get('/',(req,res)=>{
-    res.render('layouts/index.ejs')
+    res.render('college-bazar/index.ejs')
 })
 
 // listening app that it is running
 app.listen(3000,()=>{
-    console.log('litneing')
+    console.log('litneing 3000')
 })
