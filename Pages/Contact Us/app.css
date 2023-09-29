@@ -3,7 +3,14 @@
     padding: 0;
     border-size: border-box;
   }
-    
+  
+  html, body {
+    height: 100vh;
+    background: #2874f0;
+    ;
+    font-family: 'Balsamiq Sans', sans-serif;
+  }
+  
   body {
     display: flex;
     align-items: center;
