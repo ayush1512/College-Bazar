@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CollegeBazarSchema = new Schema({
-    title: String,
+    name: String,
     image: String,
     phoneNo: Number,
     price: Number,

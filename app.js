@@ -24,7 +24,12 @@ useUnifiedTopology: true})
 
 // Home Page
 app.get('/',(req,res)=>{
-    res.render('college-bazar/index.ejs')
+    res.render('college-bazar/index')
+})
+
+// New Product to add
+app.get('/newProduct',(req,res)=>{
+    res.render('college-bazar/newProduct')
 })
 
 // listening app that it is running
