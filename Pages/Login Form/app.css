@@ -4,8 +4,14 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
+    
   }
   
+  .logo{
+    width: 85px;
+    height: 100px;
+  }
   .card {
     width: 300px;
     background-color: #fff;

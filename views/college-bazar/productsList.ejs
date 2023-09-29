@@ -1,0 +1,20 @@
+<%- include('../layouts/boilearplate') %>
+<ul>
+    <% for(let product of products){ %>
+        <div>
+            <div>
+                <img src="../proImg/<%= product.image %>" alt="Product Image">
+            </div>
+            <div>
+                <div>
+                    <h5><%= product.productName %></h5>
+                    <p><%= product.description %></p>
+                    <p>
+                        <small class="text-muted"><%= product.addreass %></small>
+                    </p>
+                    <a  href="/products/<%= product._id %>">View <%= product.productName %></a>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</ul>

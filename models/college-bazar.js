@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const CollegeBazarSchema = new Schema({
     name: String,
     email:String,
+    productName: String,
     image: String,
     phoneNo: Number,
     price: Number,
@@ -11,4 +12,4 @@ const CollegeBazarSchema = new Schema({
     addreass: String
 });
 
-module.exports = mongoose.model('CollegeBazar', CollegeBazarSchema);
+module.exports = mongoose.model('collegeBazarProducts', CollegeBazarSchema);
