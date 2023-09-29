@@ -32,6 +32,11 @@ app.get('/newProduct',(req,res)=>{
     res.render('college-bazar/newProduct')
 })
 
+// Login page
+app.get('/login',(req,res)=>{
+    res.render('college-bazar/login')
+})
+
 // listening app that it is running
 app.listen(3000,()=>{
     console.log('litneing 3000')
