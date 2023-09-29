@@ -3,52 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login Form</title>
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
-    <div class="card">
-        <h2 id="Contact">Contact Us</h2>
-        <div class="row">
-          <div class="col">
-            <div class="form-group">
-              <label>First Name</label>
-              <input type="text">
-            </div>
-          </div>
+    <div class="container">
+        <div class="card">
+          <h2>Login Form</h2>
+          <form>
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
       
-          <div class="col">
-            <div class="form-group">
-              <label>Surname</label>
-              <input type="text">
-            </div>
-          </div>
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
       
-          <div class="col">
-            <div class="form-group">
-              <label>Email</label>
-              <input type="text">
-            </div>
-          </div>
+            <button type="submit">Login</button>
+          </form>
+          <div class="switch">Don't have an account? <a href="#" onclick="switchCard()">Register here</a></div>
+        </div>
       
-          <div class="col">
-            <div class="form-group">
-              <label>Phone</label>
-              <input type="text">
-            </div>
-          </div>
+        <div class="card" style="display: none;">
+          <h2>Register Form</h2>
+          <form>
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" placeholder="Enter your full name">
       
-          <div class="col">
-            <div class="form-group">
-              <label>Message</label>
-              <textarea></textarea>
-            </div>
-          </div>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
       
-          <div class="col">
-            <input type="submit" value="Submit">
-          </div>
+            <label for="new-password">New Password</label>
+            <input type="password" id="new-password" placeholder="Enter your new password">
+      
+            <button type="submit">Register</button>
+          </form>
+          <div class="switch">Already have an account? <a href="#" onclick="switchCard()">Login here</a></div>
         </div>
       </div>
+
+      <script src="app.js"></script>
 </body>
 </html>
