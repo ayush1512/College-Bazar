@@ -200,7 +200,27 @@ nav.navbar.bootsnav ul.nav > li > a {
     -o-transition: 0.3s linear; 
     transition: 0.3s linear;
 }
-nav.navbar.bootsnav ul.nav > li > a {padding:34px 21px;}
+nav.navbar.bootsnav ul.nav > li > a {
+    padding:34px 21px;
+}
+#button{
+    border: 2px solid red;
+    border-radius: 65px;
+    background-color: #ff545a;
+    width: 88px;
+    height: 49px;
+    transition: 0.2s ease-in;
+}
+#button a {
+    color: white;
+    padding: 0px;
+    margin: 15px;
+    margin-left: 24px;
+}
+#button:hover{
+    background-color: red;
+}
+
 nav.navbar.bootsnav ul.nav > li > a:hover,nav.navbar.bootsnav ul.nav > li > a:focus{color: #ff545a;}
 nav.navbar.bootsnav ul.nav > li.active>a {color: #ff545a;}
 
