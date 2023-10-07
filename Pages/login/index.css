@@ -16,6 +16,11 @@ body {
 	margin: -20px 0 50px;
 }
 
+img .logo {
+	width: 10%;
+	
+}
+
 h1 {
 	font-weight: bold;
 	margin: 0;
