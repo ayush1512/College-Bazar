@@ -1,0 +1,12 @@
+Home Page Navbar size inappropriate
+Home Page Background Image update needed
+Home Page Search Bar Content update required
+All the text content needs to be reviewed and updated
+Categories Section to be updated
+Explore Section to be updated
+Client Reviews to be looked for change or deletion
+Footer needs slight addition of content
+
+Contact Us page to be created
+Post page to be created
+About Us page to be created
