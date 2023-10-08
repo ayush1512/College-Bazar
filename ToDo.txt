@@ -1,6 +1,6 @@
 Home Page Navbar size inappropriate IS DONE
 Home Page Background Image update needed IS DONE
-Home Page Search Bar Content update required
+Home Page Search Bar Content update required IS DONE
 All the text content needs to be reviewed and updated
 Categories Section to be updated
 Explore Section to be updated
