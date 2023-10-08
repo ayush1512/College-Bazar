@@ -296,13 +296,13 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     margin-top: 25px;
 }
 
-.welcome-hero-serch-box{margin-top: 78px;display: flex;}
+.welcome-hero-serch-box{margin-top: 78px;display: flex; justify-content: center;}
 .welcome-hero-form {
     display: flex;
     background: #fff;
     height: 70px;
-    border-radius: 3px;
-    width: 85%;
+    border-radius: 24px;
+    width: 75%;
 }
 .single-welcome-hero-form {
     position: relative;
@@ -312,7 +312,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     width: 50%;
     padding: 0 30px;
 }
-.single-welcome-hero-form:first-child{border-right: 1px solid #edeff1;}
+.single-welcome-hero-form:first-child{border-right: 1px solid #edeff1; width: 100%;}
 .single-welcome-hero-form input {
     margin-left: 10px;
     height: 70px;
@@ -342,8 +342,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     height:  70px;
     background:  #ff545a;
     text-transform:  capitalize;
-    margin-left:  30px;
-    border-radius: 3px;
+    margin-left:  21px;
+    border-radius: 24px;
     -webkit-transition: 0.3s linear; 
     -moz-transition: 0.3s linear; 
     -ms-transition: 0.3s linear; 
