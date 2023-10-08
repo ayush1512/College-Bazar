@@ -1,5 +1,5 @@
 Home Page Navbar size inappropriate IS DONE
-Home Page Background Image update needed
+Home Page Background Image update needed IS DONE
 Home Page Search Bar Content update required
 All the text content needs to be reviewed and updated
 Categories Section to be updated
@@ -10,3 +10,6 @@ Footer needs slight addition of content
 Contact Us page to be created
 Post page to be created
 About Us page to be created
+
+
+WARRING: Never Use scroll Class in navbar if you have to link Another HTML page
