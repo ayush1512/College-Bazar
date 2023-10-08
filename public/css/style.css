@@ -200,7 +200,7 @@ nav.navbar.bootsnav ul.nav > li > a {
     transition: 0.3s linear;
 }
 nav.navbar.bootsnav ul.nav > li > a {
-    padding:34px 21px;
+    padding: 24px 21px;
 }
 #button{
     border: 2px solid red;
