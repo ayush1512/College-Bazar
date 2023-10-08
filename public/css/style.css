@@ -312,7 +312,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     width: 50%;
     padding: 0 30px;
 }
-.single-welcome-hero-form:first-child{border-right: 1px solid #edeff1; width: 100%;}
+.single-welcome-hero-form:first-child{width: 100%;}
 .single-welcome-hero-form input {
     margin-left: 10px;
     height: 70px;
