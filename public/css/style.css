@@ -262,12 +262,13 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 --------------------------------------*/
 .welcome-hero {
     position: relative;
-    background:url(../images/welcome-hero/banner.jpg)no-repeat;
+    background:url('../images/welcome-hero/microphone.jpg') no-repeat;
     background-position:center;
     background-size:cover;
     text-align: center;
     height:800px;
     z-index: 1;
+    transition: background-image 0.7s ease-in-out;
 }
 .welcome-hero:before{
     position: absolute;
