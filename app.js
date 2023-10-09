@@ -60,7 +60,9 @@ const upload = multer({ storage });
 
 app.post('/products', upload.any('fileToUpload'), async (req, res) => {
     const productDetail = new collegeBazarProducts(req.body.productDetail);
-    productDetail.image=req.file.filename
+    for (let filename of productDetail.fileToUpload){
+        filename=req.file.filename
+    }
     await productDetail.save();
     res.redirect(`/products/${productDetail._id}`);
 });
