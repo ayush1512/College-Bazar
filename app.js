@@ -15,10 +15,12 @@ app.set('views', path.join(__dirname, 'views'))
 
 // Uploading Product Image
 const storage = multer.diskStorage({
-    destination: 'public/proImg',
-    filename: function(req, file, cb) {
-      cb(null, file.originalname);
-    }
+    destination: function (req, file, callback) {
+        callback(null, './public/proImg');
+      },
+      filename: function (req, file, callback) {
+        callback(null, Date.now() + '-' + file.originalname);
+      }
 });  
 
 // conecting server
@@ -56,7 +58,7 @@ app.get('/newProduct',(req,res)=>{
 //New Product upload POST
 const upload = multer({ storage });
 
-app.post('/products', upload.single('productDetail[image]'), async (req, res) => {
+app.post('/products', upload.any('fileToUpload'), async (req, res) => {
     const productDetail = new collegeBazarProducts(req.body.productDetail);
     productDetail.image=req.file.filename
     await productDetail.save();
