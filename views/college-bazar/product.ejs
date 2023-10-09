@@ -3,21 +3,30 @@
     <div>
         <div>
             <% for(let image of product.fileToUpload){ %>
-                <img src="../proImg/<%= image %>" alt="Product Image">
+                <img src="<%= image.url %>" alt="Product Image">
             <% } %>
         </div>
         <div>
             <div>
-                <h2><%= product.productName %></h2>
+                <h2><%= product.category %></h2>
             </div>
             <div>
-                <h3><%= product.price %></h3>
+                <h2><%= product.brand %></h2>
+            </div>
+            <div>
+                <h2><%= product.title %></h2>
             </div>
             <div>
                 <h2><%= product.description %></h2>
             </div>
             <div>
-                <h2><%= product.addreass %></h2>
+                <h3><%= product.price %></h3>
+            </div>
+            <div>
+                <h2><%= product.location %></h2>
+            </div>
+            <div>
+                <h2><%= product.phone %></h2>
             </div>
         </div>
     </div>

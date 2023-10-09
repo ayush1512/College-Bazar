@@ -7,7 +7,7 @@ const CollegeBazarSchema = new Schema({
     title: String,
     description:String,
     price: Number,
-    fileToUpload: [{type: String}],
+    fileToUpload: [{url: String, filename:String}],
     location: String,
     phone:Number
 });

@@ -1,0 +1,37 @@
+{
+  "products": [
+    {
+      "_id": "65243ff49a2faa4b2b798eac",
+      "category": "A",
+      "brand": "dsgberg",
+      "title": "r g ge",
+      "description": " gwegg erherher h",
+      "price": 4789679,
+      "location": "thgnhryhn",
+      "phone": 74187417948,
+      "fileToUpload": [
+        {
+          "url": "https://res.cloudinary.com/dvzhqsbhy/image/upload/v1696874475/CollegeBazar/qmakfgsfpevyjsinhaqm.jpg",
+          "filename": "CollegeBazar/qmakfgsfpevyjsinhaqm",
+          "_id": "65243ff49a2faa4b2b798ead"
+        },
+        {
+          "url": "https://res.cloudinary.com/dvzhqsbhy/image/upload/v1696874479/CollegeBazar/dyicdnc0r3yvy1drtzow.jpg",
+          "filename": "CollegeBazar/dyicdnc0r3yvy1drtzow",
+          "_id": "65243ff49a2faa4b2b798eae"
+        },
+        {
+          "url": "https://res.cloudinary.com/dvzhqsbhy/image/upload/v1696874481/CollegeBazar/dn0dwxuq4xagdp34qrux.jpg",
+          "filename": "CollegeBazar/dn0dwxuq4xagdp34qrux",
+          "_id": "65243ff49a2faa4b2b798eaf"
+        },
+        {
+          "url": "https://res.cloudinary.com/dvzhqsbhy/image/upload/v1696874483/CollegeBazar/lr68i1r7ztlhwfqfiiqo.jpg",
+          "filename": "CollegeBazar/lr68i1r7ztlhwfqfiiqo",
+          "_id": "65243ff49a2faa4b2b798eb0"
+        }
+      ],
+      "__v": 0
+    }
+  ]
+}

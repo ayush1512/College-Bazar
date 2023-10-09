@@ -1,3 +1,6 @@
+if(process.env.NODE_ENV !== 'production'){
+    require('dotenv').config();
+}
 const express = require('express');
 const app = express()
 const mongoose = require('mongoose');
@@ -6,6 +9,8 @@ const collegeBazarProducts = require('./models/college-bazar');
 const path = require('path');
 const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
+const fs = require('fs');
+const {storage}=require('./cloudinary')
 app.engine('ejs', ejsMate);
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'));
@@ -13,26 +18,49 @@ app.use(express.static(path.join(__dirname,'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'))
 
-// Uploading Product Image
-const storage = multer.diskStorage({
-    destination: function (req, file, callback) {
-        callback(null, './public/proImg');
-      },
-      filename: function (req, file, callback) {
-        callback(null, Date.now() + '-' + file.originalname);
-      }
-});  
 
 // conecting server
 mongoose.connect('mongodb://127.0.0.1:27017/college-bazar',{ useNewUrlParser: true, 
 useUnifiedTopology: true})
-.then(()=>{
+.then(async ()=>{
     console.log('MONGO open');
+    // Load JSON data
+    const jsonData = loadJsonData();
+
+    if (jsonData) {
+      for (const product of jsonData.products) {
+        // Check if a document with the same _id already exists
+        const existingProduct = await collegeBazarProducts.findOne({ _id: product._id });
+
+        if (!existingProduct) {
+          // Insert JSON data into MongoDB
+          await collegeBazarProducts.create(product);
+          console.log(`Data for product ${product.title} inserted into MongoDB`);
+        } else {
+          console.log(`Data for product ${product.title} with _id ${product._id} already exists in MongoDB and was not inserted.`);
+        }
+    }
+    }
+    // listening app that it is running
+    app.listen(3000,()=>{
+        console.log('litneing 3000')
+    })
 })
 .catch(err =>{
     console.log('CONNECTIO ERROR!!!!!!!!!!!!!!');
     console.log(err);
-})
+});
+function loadJsonData() {
+    const jsonDataFilePath = path.join(__dirname, 'seed_data', 'data.json');
+  
+    try {
+      const jsonData = fs.readFileSync(jsonDataFilePath, 'utf-8');
+      return JSON.parse(jsonData);
+    } catch (error) {
+      console.error('Error loading JSON data:', error);
+      return null;
+    }
+}
 
 // Home Page
 app.get('/',(req,res)=>{
@@ -58,14 +86,36 @@ app.get('/newProduct',(req,res)=>{
 //New Product upload POST
 const upload = multer({ storage });
 
-app.post('/products', upload.any('fileToUpload'), async (req, res) => {
-    const productDetail = new collegeBazarProducts(req.body.productDetail);
-    for (let filename of productDetail.fileToUpload){
-        filename=req.file.filename
+app.post('/products', upload.array('fileToUpload', 15), async (req, res) => {
+    try {
+      const files = req.files;
+  
+      if (files.length < 3 || files.length > 15) {
+        return res.status(400).send('You must upload between 3 to 15 images.');
+      }
+
+      const productDetail = new collegeBazarProducts(req.body.productDetail);
+      productDetail.fileToUpload=req.files.map(f => ({url:f.path , filename:f.filename}))
+  
+      await productDetail.save();
+
+      // To save Products in jason formate
+      const products = await collegeBazarProducts.find({});
+      const dataToSave = {
+        products,
+      };
+
+      const jsonDataFilePath = path.join(__dirname, 'seed_data', 'data.json');
+      fs.writeFileSync(jsonDataFilePath, JSON.stringify(dataToSave, null, 2), 'utf-8');
+
+
+      res.redirect(`/products/${productDetail._id}`);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
     }
-    await productDetail.save();
-    res.redirect(`/products/${productDetail._id}`);
 });
+  
 
 // Login page
 app.get('/login',(req,res)=>{
@@ -75,9 +125,4 @@ app.get('/login',(req,res)=>{
 // Contact Us page
 app.get('/contactUs',(req,res)=>{
     res.render('college-bazar/contactUs')
-})
-
-// listening app that it is running
-app.listen(3000,()=>{
-    console.log('litneing 3000')
 })
