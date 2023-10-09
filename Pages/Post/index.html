@@ -5,53 +5,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post</title>
+    <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
     <h1>Post your AD</h1>
-    <div>
+    <form action="/post_ad.php" method="POST">
         <div>
-            <h2>Category</h2>
-            <select>
-                <option value="selectCatogary"> Select Category</option>
-                <option value="X">X</option>
-                <option value="Y">Y</option>
-                <option value="Z">Z</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-            </select>
-        </div>
-        <div>
-            <h2>Details</h2>
-            <input type="brand" placeholder="brand" required>
-            <input placeholder="add title" required>
-            <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
-        </div>
-        <div>
-            <h2>Set Price</h2>
-            <input placeholder="Price" type="number" min="0">
-        </div>
-        <div>
-            <h2>Upload Photos</h2>
-            <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload" required>
-            <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload" required>
-            <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload" required>
-            <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload" >
-            <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload" >
-        </div>
-        <div>
-            <h2>Location</h2>
-            <input placeholder="Location">
-        </div>
-        <div>
-            <h2>Review</h2>
-            <p>Review</p>
-        </div>
-        <div>
-            <button>Submit</button>
-        </div>
-
-    </div>
+            <div>
+                <h2>Category</h2>
+                <select name="category">
+                    <option value="selectCatogary"> Select Category</option>
+                    <option value="X">X</option>
+                    <option value="Y">Y</option>
+                    <option value="Z">Z</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                </select>
+            </div>
+            <div>
+                <h2>Details</h2>
+                <input type="text" name="brand" placeholder="Brand" required>
+                <input type="text" name="title" placeholder="Add title" required>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
+            </div>
+            <div>
+                <h2>Set Price</h2>
+                <input type="number" name="price" min="0" placeholder="Price">
+            </div>
+            <div>
+                <h2>Upload Photos</h2>
+                <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload" required>
+                <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload" required>
+                <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload" required>
+                <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload">
+                <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload">
+            </div>
+            <div>
+                <h2>Location</h2>
+                <input type="text" name="location" placeholder="Location">
+            </div>
+            <div>
+                <h2>Phone Number</h2>
+                <input type="tel" name="phone" placeholder="Phone Number">
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+    </form>
 </body>
 
 </html>
