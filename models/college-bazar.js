@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const CollegeBazarSchema = new Schema({
-    name: String,
-    email:String,
-    productName: String,
-    image: String,
-    phoneNo: Number,
+    category: String,
+    brand:String,
+    title: String,
+    description:String,
     price: Number,
-    description: String,
-    addreass: String
+    fileToUpload: [{type: String}],
+    location: String,
+    phone:Number
 });
 
 module.exports = mongoose.model('collegeBazarProducts', CollegeBazarSchema);

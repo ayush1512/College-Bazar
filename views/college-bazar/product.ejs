@@ -2,7 +2,9 @@
 <div>
     <div>
         <div>
-            <img src="../proImg/<%=product.image %>" alt="Product Image">
+            <% for(let image of product.fileToUpload){ %>
+                <img src="../proImg/<%= image %>" alt="Product Image">
+            <% } %>
         </div>
         <div>
             <div>
