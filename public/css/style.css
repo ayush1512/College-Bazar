@@ -1,4 +1,4 @@
-/*==================================
+/* ==================================
 * Author        : "ThemeSine"
 * Template Name : Listrace  HTML Template
 * Version       : 1.0
@@ -72,7 +72,7 @@ p {
     line-height: 1.8;
     text-transform: initial;
 }
-img{border:none;max-width:100%; height:auto;}
+img{border:none;max-width:100%; height:auto;margin: 0px 0px 10px 55px}
 ul{
 	padding: 0;
     margin: 0 auto;
@@ -205,19 +205,21 @@ nav.navbar.bootsnav ul.nav > li > a {
 #button{
     border: 2px solid red;
     border-radius: 65px;
-    background-color: #ff545a;
+    background: linear-gradient(to bottom, #ff545a, #ff7f50);
     width: 88px;
-    height: 49px;
+    height: 35px;
     transition: 0.2s ease-in;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 #button a {
     color: white;
     padding: 0px;
-    margin: 15px;
+    margin: 5px;
     margin-left: 24px;
 }
 #button:hover{
-    background-color: red;
+    background: linear-gradient(to bottom, #ff7f50, #ff545a);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 nav.navbar.bootsnav ul.nav > li > a:hover,nav.navbar.bootsnav ul.nav > li > a:focus{color: #ff545a;}
