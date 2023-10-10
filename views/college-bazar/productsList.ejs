@@ -3,9 +3,7 @@
     <% for(let product of products){ %>
         <div>
             <div>
-                <% for(let image of product.fileToUpload){ %>
-                    <img src="<%= image.url %>" alt="Product Image">
-                <% } %>
+                <img src="<%= product.fileToUpload.url[0] %>" alt="Product Image">
             </div>
             <div>
                 <div>
