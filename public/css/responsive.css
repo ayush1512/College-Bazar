@@ -49,8 +49,8 @@
 	.welcome-hero-txt h2 {font-size: 24px;}
 	.single-welcome-hero {height:auto;background: transparent;padding: 100px 0;display: block;}
 	.welcome-hero-txt {padding-top: 80px;}
-	.single-welcome-hero-form {flex-direction: column;width: 100%;background: #fff; margin: 15px 0;padding: 20px 0;}
-	.welcome-hero-form {width: 100%;flex-direction: column;height: 250px;background: transparent;}
+	.single-welcome-hero-form {background: #fff; margin: 15px 0;padding: 4px 0; border-radius: 24px;}
+	.welcome-hero-form {width: 100%;flex-direction: column;background: transparent;}
 
 	.list-topics-content {top: 0;margin: 60px auto;}
 
