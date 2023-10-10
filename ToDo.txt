@@ -9,7 +9,7 @@ Footer needs slight addition of content
 
 Contact Us page to be created
 Post page to be created IS DONE
-About Us page to be created
+About Us page to be created IS DONE
 Product Page to be created
 Product Space Page to be created
 Edit from Page to be created
