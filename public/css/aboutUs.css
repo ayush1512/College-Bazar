@@ -1,0 +1,151 @@
+/* Typewriter styles */
+.typewriter {
+    overflow: hidden;
+    border-right: 0.15em solid orange;
+    white-space: pre-wrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 40px;
+    text-align: center;
+    color: #333;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+
+    50% {
+        border-color: orange;
+    }
+}
+
+/* Main styles */
+main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 40px;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.creators {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.creator-card {
+    flex-basis: 30%;
+    max-width: 30%;
+    margin-bottom: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.creator-card:hover {
+    transform: translateY(-10px);
+}
+
+.creator-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.creator-card h2 {
+    color: #333;
+    font-size: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.creator-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    color: #333;
+}
+
+.creator-card .creator-description {
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg);
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+}
+
+.creator-card.flipped .creator-description {
+    transform: rotateY(0deg);
+}
+
+.creator-card .creator-description p {
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    color: #333;
+}
+
+.creator-card .creator-description button {
+    background-color: #ff3333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.creator-card .creator-description button:hover {
+    background-color: #e60000;
+}
+
+.creator-card.flipped .creator-description button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -68,5 +68,10 @@ router.get('/products/:id',async(req,res)=>{
     res.render('college-bazar/product',{product})
 })
 
+//
+router.get('/aboutUs',(req,res)=>{
+  res.render('college-bazar/aboutUs')
+})
+
 
 module.exports = router;
