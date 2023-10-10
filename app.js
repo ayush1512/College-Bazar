@@ -36,6 +36,9 @@ useUnifiedTopology: true})
         if (!existingProduct) {
           // Insert JSON data into MongoDB
           await collegeBazarProducts.create(product);
+          console.log(`Data for product ${product.title} inserted into MongoDB`);
+        } else {
+          console.log(`Data for product ${product.title} with _id ${product._id} already exists in MongoDB and was not inserted.`);
         }
     }
     }

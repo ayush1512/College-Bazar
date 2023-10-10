@@ -8,11 +8,11 @@ Client Reviews to be looked for change or deletion
 Footer needs slight addition of content
 
 Contact Us page to be created
-Post page to be created
+Post page to be created IS DONE
 About Us page to be created
 Product Page to be created
 Product Space Page to be created
 Edit from Page to be created
 
 
-WARRING: Never Use scroll Class in navbar if you have to link Another HTML page
+WARNING: Never Use scroll Class in navbar if you have to link Another HTML page
