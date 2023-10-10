@@ -9,7 +9,11 @@ const CollegeBazarSchema = new Schema({
     price: Number,
     fileToUpload: [{url: String, filename:String}],
     location: String,
-    phone:Number
+    phone:Number,
+    author: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 });
 
 module.exports = mongoose.model('collegeBazarProducts', CollegeBazarSchema);

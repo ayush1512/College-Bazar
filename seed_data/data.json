@@ -1,36 +1,32 @@
 {
   "products": [
     {
-      "_id": "65243ff49a2faa4b2b798eac",
-      "category": "A",
-      "brand": "dsgberg",
-      "title": "r g ge",
-      "description": " gwegg erherher h",
-      "price": 4789679,
-      "location": "thgnhryhn",
-      "phone": 74187417948,
+      "_id": "6525db7a4ff3acc4152829a0",
+      "category": "Y",
+      "brand": "er",
+      "title": "rgvere",
+      "description": "gre",
+      "price": 484546487974,
+      "location": "egbhtrhtrhtrht",
+      "phone": 8468976584,
       "fileToUpload": [
         {
-          "url": "https://res.cloudinary.com/dvzhqsbhy/image/upload/v1696874475/CollegeBazar/qmakfgsfpevyjsinhaqm.jpg",
-          "filename": "CollegeBazar/qmakfgsfpevyjsinhaqm",
-          "_id": "65243ff49a2faa4b2b798ead"
+          "url": "https://res.cloudinary.com/dvzhqsbhy/image/upload/v1696979829/CollegeBazar/pxvxjtj28kz37u9d8r5m.jpg",
+          "filename": "CollegeBazar/pxvxjtj28kz37u9d8r5m",
+          "_id": "6525db7a4ff3acc4152829a1"
         },
         {
-          "url": "https://res.cloudinary.com/dvzhqsbhy/image/upload/v1696874479/CollegeBazar/dyicdnc0r3yvy1drtzow.jpg",
-          "filename": "CollegeBazar/dyicdnc0r3yvy1drtzow",
-          "_id": "65243ff49a2faa4b2b798eae"
+          "url": "https://res.cloudinary.com/dvzhqsbhy/image/upload/v1696979831/CollegeBazar/psbfxdx5vpgv7l5k96xv.jpg",
+          "filename": "CollegeBazar/psbfxdx5vpgv7l5k96xv",
+          "_id": "6525db7a4ff3acc4152829a2"
         },
         {
-          "url": "https://res.cloudinary.com/dvzhqsbhy/image/upload/v1696874481/CollegeBazar/dn0dwxuq4xagdp34qrux.jpg",
-          "filename": "CollegeBazar/dn0dwxuq4xagdp34qrux",
-          "_id": "65243ff49a2faa4b2b798eaf"
-        },
-        {
-          "url": "https://res.cloudinary.com/dvzhqsbhy/image/upload/v1696874483/CollegeBazar/lr68i1r7ztlhwfqfiiqo.jpg",
-          "filename": "CollegeBazar/lr68i1r7ztlhwfqfiiqo",
-          "_id": "65243ff49a2faa4b2b798eb0"
+          "url": "https://res.cloudinary.com/dvzhqsbhy/image/upload/v1696979834/CollegeBazar/gwcg0zgzga30zzky5ia3.jpg",
+          "filename": "CollegeBazar/gwcg0zgzga30zzky5ia3",
+          "_id": "6525db7a4ff3acc4152829a3"
         }
       ],
+      "author": "6525bf17f3083e5e23f970c2",
       "__v": 0
     }
   ]
