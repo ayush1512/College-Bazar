@@ -123,6 +123,3 @@
     background-color: #0e4bf1;
   }
   
-  .toast.active ~ button {
-    pointer-events: none;
-  }
