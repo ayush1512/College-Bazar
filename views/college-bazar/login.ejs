@@ -1,7 +1,6 @@
 
 <%- layout('layouts/boilearplate') %>
-<head><link rel="stylesheet" href="../css/login.css"></head>
-<div class="body">
+<% block('head').append('<link rel="stylesheet" href="../css/login.css">') %>
     <div class="login-container" id="login-container">
 	<div class="form-container sign-up-container">
 		<form action="/register" method="POST">
@@ -36,5 +35,4 @@
 		</div>
 	</div>
     </div>
-</div>
 <script src="../js/login.js"></script>

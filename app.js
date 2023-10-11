@@ -36,10 +36,7 @@ useUnifiedTopology: true})
         if (!existingProduct) {
           // Insert JSON data into MongoDB
           await collegeBazarProducts.create(product);
-          console.log(`Data for product ${product.title} inserted into MongoDB`);
-        } else {
-          console.log(`Data for product ${product.title} with _id ${product._id} already exists in MongoDB and was not inserted.`);
-        }
+        } 
     }
     }
     // listening app that it is running
@@ -100,5 +97,15 @@ app.use((req, res, next) => {
   next();
 })
 
-app.use('/', userRoutes);
 app.use('/', collegeBazarRoutes)
+app.use('/', userRoutes);
+
+app.all('*', (req, res, next) => {
+  next(new ExpressError('Page Not Found', 404))
+})
+
+app.use((err, req, res, next) => {
+  const { statusCode = 500 } = err;
+  if (!err.message) err.message = 'Oh No, Something Went Wrong!'
+  res.status(statusCode).render('error', { err })
+})

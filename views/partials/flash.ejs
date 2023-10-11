@@ -1,0 +1,33 @@
+<% if(success && success.length) {%>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <%= success %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<% } %>
+
+<%- block('head').append("<link rel="stylesheet" href="../css/flash.css">) %>
+<div class="toast">
+  
+    <div class="toast-content">
+      <i class="fas fa-solid fa-check check"></i>
+  
+      <div class="message">
+        <span class="text text-1">Success</span>
+        <span class="text text-2">Your changes has been saved</span>
+      </div>
+    </div>
+    <i class="fa-solid fa-xmark close">x</i>
+  
+    <div class="progress"></div>
+</div>
+
+<% if(error && error.length) {%>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <%= error %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<% } %>

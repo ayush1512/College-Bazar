@@ -9,6 +9,7 @@ const ExpressError = require('../utils/ExpressError');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('../models/user');
+const catchAsync=require('../utils/catchAsync')
 
 // Login page
 router.get('/login',(req,res)=>{
@@ -16,7 +17,7 @@ router.get('/login',(req,res)=>{
 })
 
 
-router.post('/register', async (req, res, next) => {
+router.post('/register', catchAsync( async (req, res, next) => {
     try {
         const { email, username, password } = req.body;
         const user = new User({ email, username });
@@ -30,7 +31,7 @@ router.post('/register', async (req, res, next) => {
         req.flash('error', e.message);
         res.redirect('/login');
     }
-});
+}));
 
 
 router.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), (req, res) => {
