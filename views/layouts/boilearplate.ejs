@@ -43,6 +43,7 @@
         
         <!--responsive.css-->
         <link rel="stylesheet" href="../css/responsive.css">
+        <link rel="stylesheet" href="../css/flash.css">
         <%- block('head').toString() %>
         
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -55,13 +56,12 @@
     </head>
 <body>
 
-
     <%- include('../partials/flash') %>
     <%- include('../partials/navbar') %>
     <main class="body">
         <%- body %>
     </main>
     <%- include('../partials/footer') %>
-
+    <script src="../js/flash.js"></script>
 </body>
 </html>
