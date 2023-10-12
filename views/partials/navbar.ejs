@@ -22,11 +22,11 @@
                       <li ><a href="/products">Products</a></li>
                       <li><a href="/contactUs">contact</a></li>
                       <li><a href="/aboutUs">About Us</a></li>
-                      
+                      <% if(!currentUser){ %>
                       <li><a href="/login" >login</a></li>
-                      
+                      <% }else{ %>
                         <li><a href="/profile">Profile</a></li>
-                      
+                      <% } %>
                       <li  id="button"><a href="/newProduct" >Post</a></li>
                   </ul><!--/.nav -->
               </div><!-- /.navbar-collapse -->

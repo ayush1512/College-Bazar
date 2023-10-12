@@ -23,4 +23,12 @@ module.exports.isAuthor = async (req, res, next) => {
     next();
 }
 
+module.exports.loggedIn=(req,res,next)=>{
+    if(req.isAuthenticated()){
+        req.flash('error','You already Logged In')
+        return res.redirect('/')
+    }
+    next();
+}
+
 

@@ -10,15 +10,15 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('../models/user');
 const catchAsync=require('../utils/catchAsync')
+const {loggedIn, isLoggedIn}=require('../middleware')
 
 // Login page
-router.get('/login',(req,res)=>{
+router.get('/login',loggedIn,(req,res)=>{
     res.render('college-bazar/login')
 })
 
 
-router.post('/register', catchAsync( async (req, res, next) => {
-    if(!req.isAuthenticated()){
+router.post('/register',loggedIn, catchAsync( async (req, res, next) => {
         try {
             const { email, username, password } = req.body;
             const user = new User({ email, username });
@@ -32,32 +32,23 @@ router.post('/register', catchAsync( async (req, res, next) => {
             req.flash('error', e.message);
             res.redirect('/login');
         }
-    } else{
-        req.flash('error','You already logedin')
-        res.redirect('/')
-    }
 }));
 
 
-router.post('/login', passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), (req, res) => {
-    if(!req.isAuthenticated()){
+router.post('/login',loggedIn, passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), (req, res) => {
         req.flash('success', 'welcome back!');
         const redirectUrl = req.session.returnTo || '/';
         delete req.session.returnTo;
-    res.redirect(redirectUrl);
-    } else{
-        req.flash('error', 'You already logedin')
-        res.redirect('/')
-    }
+        res.redirect(redirectUrl);
 })
 
-router.get('/logout', (req, res) => {
+router.get('/logout',isLoggedIn, (req, res) => {
     req.logout();
     req.flash('success', "Goodbye!");
     res.redirect('/');
 })
 
-router.get('/profile',catchAsync(async (req,res,next)=>{
+router.get('/profile',isLoggedIn,catchAsync(async (req,res,next)=>{
     res.render('college-bazar/profile');
 }))
 
