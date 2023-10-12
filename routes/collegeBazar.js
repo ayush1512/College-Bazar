@@ -17,7 +17,7 @@ const catchAsync=require('../utils/catchAsync')
 router.get('/',(req,res)=>{
   const alertType = "error";
 const alertMessage = "An error occurred. Please try again.";
-    res.render('college-bazar/index', { alertType, alertMessage })
+    res.render('college-bazar/index')
 });
 
 // New Product to add page
