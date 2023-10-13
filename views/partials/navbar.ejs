@@ -19,14 +19,11 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
                   <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                    <li class="scroll"><a href="#explore">explore</a></li>
+                      <li class="scroll"><a href="#explore">explore</a></li>
+                      <li class="scroll"><a href="#reviews">review</a></li>
                       <li><a href="/contactUs">contact</a></li>
                       <li><a href="/aboutUs">About Us</a></li>
-                      <% if(!currentUser){ %>
                       <li><a href="/login" >login</a></li>
-                      <% }else{ %>
-                        <li><a href="/profile">Profile</a></li>
-                      <% } %>
                       <li  id="button"><a href="/newProduct" >Post</a></li>
                   </ul><!--/.nav -->
               </div><!-- /.navbar-collapse -->

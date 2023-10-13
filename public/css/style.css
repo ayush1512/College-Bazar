@@ -367,7 +367,6 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
     position: relative;
     top: -70px;
     z-index: 1;
-    display: flex;
 }
 .list-topics-content ul li { display: inline-block;}
 
@@ -677,6 +676,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: #ff545a;}
 /*.slick-slide*/
 .slick-initialized .slick-slide {
     display: block;
+    padding: 40px 0;
 }
 .slick-slide.slick-cloned {outline: 0!important;}
 .slick-slide {

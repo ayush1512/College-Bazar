@@ -25,6 +25,20 @@ mongoose.connect('mongodb://127.0.0.1:27017/college-bazar',{ useNewUrlParser: tr
 useUnifiedTopology: true})
 .then(async ()=>{
     console.log('MONGO open');
+    // Load JSON data
+    const jsonData = loadJsonData();
+
+    if (jsonData) {
+      for (const product of jsonData.products) {
+        // Check if a document with the same _id already exists
+        const existingProduct = await collegeBazarProducts.findOne({ _id: product._id });
+
+        if (!existingProduct) {
+          // Insert JSON data into MongoDB
+          await collegeBazarProducts.create(product);
+        } 
+    }
+    }
     // listening app that it is running
     app.listen(3000,()=>{
         console.log('litneing 3000')
