@@ -1,20 +1,30 @@
 <%- layout('layouts/boilearplate') %>
+<% block('head').append('<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>') %>
+<% block('head').append('<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>') %>
+<% block('head').append('<link rel="stylesheet" href="../css/productsList.css">') %>
 <ul>
-    <% for(let product of products){ %>
-        <div>
-            <div>
-                <img src="<%= product.fileToUpload[0].url %>" alt="Product Image">
+    <% for(let i=0; i<products.length;i++){ %>
+        <li>
+        <div class="product-card">
+            <div class="product-images">
+                <div class="carousel">
+                    <img src="<%= products[i].fileToUpload[0].url %>" alt="Product Image 1">
+                    <img src="<%= products[i].fileToUpload[1].url %>" alt="Product Image 2">
+                    <img src="<%= products[i].fileToUpload[2].url %>" alt="Product Image 3">
+                </div>
             </div>
-            <div>
-                <div>
-                    <h5><%= product.title %></h5>
-                    <p><%= product.description %></p>
-                    <p>
-                        <small class=""><%= product.location %></small>
-                    </p>
-                    <a  href="/products/<%= product._id %>">View <%= product.title %></a>
+            <div class="product-details">
+                <h2 class="product-name"><%= products[i].title %></h2>
+                <p class="product-author"><%= products[i].author.username %></p>
+                <p class="product-description"><%= products[i].description %></p>
+                <p class="product-price"><%= products[i].price %></p>
+                <div class="product-buttons">
+                    <button onclick="location.href='/products/<%= products[i]._id %>'" class="buy-button">Buy Now</button>
+                    <a href="#" class="wishlist-button"><i class="fa fa-heart"></i></a>
                 </div>
             </div>
         </div>
+        </li>
     <% } %>
 </ul>
+<% block('footer').append('<script src="../js/productsList.js"></script>') %>

@@ -1,0 +1,104 @@
+<% layout('layouts/boilearplate') %>
+<% block('head').append('<link rel="stylesheet" href="../css/profile.css">') %>
+<div>
+    <div class="profile-header">
+      <div class="profile-img">
+        <% if(currentUser.profileImg){ %>
+        <% }else{ %>
+          <img src="../img/profile.avif" width="200" alt="Profile Image">
+        <% } %>
+      </div>
+      <div class="profile-nav-info">
+        <h3 class="user-name"><%= currentUser.username %></h3>
+        <div class="address">
+          <p id="state" class="state">Madhya Pradesh,</p>
+          <span id="country" class="country">India.</span>
+        </div>
+  
+      </div>
+      <div class="profile-option">
+        <div class="notification">
+          <i class="fa fa-bell"></i>
+          <span class="alert-message">3</span>
+        </div>
+      </div>
+    </div>
+  
+    <div class="main-bd">
+      <div class="left-side">
+        <div class="profile-side">
+          <p class="mobile-no"><i class="fa fa-phone"></i> +23470xxxxx700</p>
+          <p class="user-mail"><i class="fa fa-envelope"></i> <%= currentUser.email %></p>
+          <div class="user-bio">
+            <h3>Bio</h3>
+            <p class="bio">
+              Lorem ipsum dolor sit amet, hello how consectetur adipisicing elit. Sint consectetur provident magni yohoho consequuntur, voluptatibus ghdfff exercitationem at quis similique. Optio, amet!
+            </p>
+          </div>
+          <div class="profile-btn">
+            <button type="reset" onclick="location.href='/newProduct'" class="chatbtn" id="chatBtn"><i class="fa fa-comment"></i> Post</button>
+            <button type="reset" onclick="location.href='/newProduct'"  class="createbtn" id="Create-post"><i class="fa fa-plus"></i> Edit</button>
+          </div>
+          <div class="user-rating">
+            <h3 class="rating">4.5</h3>
+            <div class="rate">
+              <div class="star-outer">
+                <div class="star-inner">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+              <span class="no-of-user-rate"><span>123</span>&nbsp;&nbsp;reviews</span>
+            </div>
+  
+          </div>
+        </div>
+  
+      </div>
+      <div class="right-side" style="width: 100%;">
+  
+        <div class="profileNav">
+          <ul>
+            <li onclick="tabs(0)" class="user-post active">Posts</li>
+            <li onclick="tabs(1)" class="user-review">Reviews</li>
+            <li onclick="tabs(2)" class="user-setting"> Settings</li>
+          </ul>
+        </div>
+        <div class="profile-body">
+          <div class="profile-posts tab">
+            <% if(product){ %>
+              <% for(prod of product){ %>
+                <div class="post-card">
+                  <div class="post-img">
+                      <img src="<%= prod.fileToUpload[0].url %>" alt="Post Image">
+                  </div>
+                  <div class="post-info">
+                      <h2><%= prod.title  %></h2>
+                      <h3><%= prod.brand  %></h3>
+                  </div>
+            </div>
+            <% } %>
+            <% } %>
+          </div>
+          <div class="profile-reviews tab" style="flex-direction: column;">
+            <h1>User reviews</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam pariatur officia, aperiam quidem quasi, tenetur molestiae. Architecto mollitia laborum possimus iste esse. Perferendis tempora consectetur, quae qui nihil voluptas. Maiores debitis
+              repellendus excepturi quisquam temporibus quam nobis voluptatem, reiciendis distinctio deserunt vitae! Maxime provident, distinctio animi commodi nemo, eveniet fugit porro quos nesciunt quidem a, corporis nisi dolorum minus sit eaque error
+              sequi ullam. Quidem ut fugiat, praesentium velit aliquam!</p>
+          </div>
+          <div class="profile-settings tab">
+            <div class="account-setting">
+              <h1>Acount Setting</h1>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit omnis eaque, expedita nostrum, facere libero provident laudantium. Quis, hic doloribus! Laboriosam nemo tempora praesentium. Culpa quo velit omnis, debitis maxime, sequi
+                animi dolores commodi odio placeat, magnam, cupiditate facilis impedit veniam? Soluta aliquam excepturi illum natus adipisci ipsum quo, voluptatem, nemo, commodi, molestiae doloribus magni et. Cum, saepe enim quam voluptatum vel debitis
+                nihil, recusandae, omnis officiis tenetur, ullam rerum.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% block('footer').append('<script src="../js/profile.js"></script>') %>
