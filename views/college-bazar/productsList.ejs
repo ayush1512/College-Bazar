@@ -4,6 +4,7 @@
 <% block('head').append('<link rel="stylesheet" href="../css/productsList.css">') %>
 <ul>
     <% for(let i=0; i<products.length;i++){ %>
+        <li>
         <div class="product-card">
             <div class="product-images">
                 <div class="carousel">
@@ -23,6 +24,7 @@
                 </div>
             </div>
         </div>
+        </li>
     <% } %>
 </ul>
 <% block('footer').append('<script src="../js/productsList.js"></script>') %>

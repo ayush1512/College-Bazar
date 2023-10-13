@@ -409,7 +409,7 @@ button.createbtn i {
   margin-top: 20px;
     height: 412px;
     width: 100%;
-    overflow: scroll;
+    overflow: auto;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
