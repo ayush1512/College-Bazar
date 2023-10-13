@@ -359,3 +359,58 @@ button.createbtn i {
   justify-content: center;
   margin: 20px auto;
 }
+
+.post-card {
+  width: 442px;
+  height: 296px;
+  border: 1px solid rgb(187, 185, 185);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.post-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-info {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.post-card:hover .post-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-info h2 {
+  font-size: 1.5rem;
+  margin-left: -27px;
+}
+
+.post-info h3 {
+  font-size: 1rem;
+  margin-left:-27px;
+}
+
+.profile-posts {
+  margin-top: 20px;
+    height: 412px;
+    width: 100%;
+    overflow: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}

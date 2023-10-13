@@ -9,6 +9,7 @@ const ExpressError = require('../utils/ExpressError');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('../models/user');
+const collegeBazarProducts = require('../models/college-bazar');
 const catchAsync=require('../utils/catchAsync')
 const {loggedIn, isLoggedIn}=require('../middleware')
 
@@ -49,7 +50,9 @@ router.get('/logout',isLoggedIn, (req, res) => {
 })
 
 router.get('/profile',isLoggedIn,catchAsync(async (req,res,next)=>{
-    res.render('college-bazar/profile');
+    const user=await User.findById(req.user._id)
+    const product = await collegeBazarProducts.find({ author: user._id })
+    res.render('college-bazar/profile',{user,product});
 }))
 
 
