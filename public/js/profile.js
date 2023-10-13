@@ -12,7 +12,7 @@ $(".profileNav ul li").click(function() {
     tab.forEach(function(node) {
       node.style.display = "none";
     });
-    tab[panelIndex].style.display = "block";
+    tab[panelIndex].style.display = "flex";
   }
   tabs(0);
   

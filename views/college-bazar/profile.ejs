@@ -58,7 +58,7 @@
         </div>
   
       </div>
-      <div class="right-side">
+      <div class="right-side" style="width: 100%;">
   
         <div class="profileNav">
           <ul>
@@ -69,12 +69,21 @@
         </div>
         <div class="profile-body">
           <div class="profile-posts tab">
-            <h1>Your Post</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa quia sunt itaque ut libero cupiditate ullam qui velit laborum placeat doloribus, non tempore nisi ratione error rem minima ducimus. Accusamus adipisci quasi at itaque repellat sed
-              magni eius magnam repellendus. Quidem inventore repudiandae sunt odit. Aliquid facilis fugiat earum ex officia eveniet, nisi, similique ad ullam repudiandae molestias aspernatur qui autem, nam? Cupiditate ut quasi iste, eos perspiciatis maiores
-              molestiae.</p>
+            <% if(product){ %>
+              <% for(prod of product){ %>
+                <div class="post-card">
+                  <div class="post-img">
+                      <img src="<%= prod.fileToUpload[0].url %>" alt="Post Image">
+                  </div>
+                  <div class="post-info">
+                      <h2><%= prod.title  %></h2>
+                      <h3><%= prod.brand  %></h3>
+                  </div>
+            </div>
+            <% } %>
+            <% } %>
           </div>
-          <div class="profile-reviews tab">
+          <div class="profile-reviews tab" style="flex-direction: column;">
             <h1>User reviews</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam pariatur officia, aperiam quidem quasi, tenetur molestiae. Architecto mollitia laborum possimus iste esse. Perferendis tempora consectetur, quae qui nihil voluptas. Maiores debitis
               repellendus excepturi quisquam temporibus quam nobis voluptatem, reiciendis distinctio deserunt vitae! Maxime provident, distinctio animi commodi nemo, eveniet fugit porro quos nesciunt quidem a, corporis nisi dolorum minus sit eaque error
