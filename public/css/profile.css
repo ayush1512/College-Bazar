@@ -314,12 +314,6 @@ button.createbtn i {
 }
 
 @media (max-width: 400px) {
-  .body {
-    
-  }
-
-  .profile-header h3 {
-  }
 
   .profile-option {
     width: 30px;
@@ -404,7 +398,6 @@ button.createbtn i {
   font-size: 1rem;
   margin-left:-27px;
 }
-
 .profile-posts {
   margin-top: 20px;
     height: 412px;
