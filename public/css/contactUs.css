@@ -19,6 +19,8 @@
 .contactUsCard:hover {
     opacity: 1;
     background-color: #f2f2f2;
+    border: 1px solid rgb(38, 38, 38);
+    transition: opacity 0.3s ease-in-out;
     /* Full opacity on hover */
 }
 
@@ -59,10 +61,3 @@ input[type="submit"]:hover {
     background-color: #45a049;
 }
 
-/* Added background image */
-.body {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    background-image: url('https://images.unsplash.com/photo-1561212044-bac5ef688a07?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80');
-    background-repeat: repeat;
-}
