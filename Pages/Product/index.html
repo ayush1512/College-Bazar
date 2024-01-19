@@ -1,0 +1,74 @@
+<!-- FILEPATH: /e:/Repos/College-Bazar/Pages/Product/index.html -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product Page - College Bazar</title>
+        <style>
+            /* Red and white theme */
+            body {
+                background-color: white;
+                color: red;
+            }
+            h1 {
+                color: red;
+            }
+            /* Product card */
+            .product-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 50%;
+                margin: 0 auto;
+                padding: 1em;
+                background-color: white;
+                border: 2px solid red;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+            }
+            .product-image {
+                width: 100%;
+                margin-bottom: 1em;
+            }
+            .product-name {
+                font-size: 2em;
+                margin-bottom: 0.5em;
+            }
+            .product-price {
+                font-size: 1.5em;
+                margin-bottom: 0.5em;
+            }
+            .product-description {
+                font-size: 1.2em;
+                margin-bottom: 1em;
+            }
+            /* Buy button */
+            .buy-button {
+                display: block;
+                width: 50%;
+                margin: 0 auto;
+                padding: 0.5em;
+                background-color: red;
+                color: white;
+                font-size: 1.2em;
+                text-align: center;
+                text-decoration: none;
+            }
+            .buy-button:hover {
+                background-color: white;
+                color: red;
+                border: 2px solid red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Product Name</h1>
+        <div class="product-card">
+            <img class="product-image" src="e1.jpg" alt="Product Image">
+            <div class="product-name">Product Name</div>
+            <div class="product-price">$19.99</div>
+            <div class="product-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sapien vel bibendum bibendum, arcu velit bibendum augue, vel bibendum sapien sapien vel bibendum.</div>
+            <a class="buy-button" href="#">Buy Now</a>
+        </div>
+    </body>
+</html>

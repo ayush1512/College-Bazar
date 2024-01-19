@@ -1,17 +1,38 @@
+<% block('head').append('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">') %>
 <% if(success && success.length) {%>
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-    <%= success %>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
+<div class="toast">
+  
+    <div class="toast-content">
+      <i class="check">👍</i>
+  
+      <div class="message">
+        <span class="text text-1">Success</span>
+        <span class="text text-2"><%= success %></span>
+      </div>
+    </div>
+    <i class="fa-solid fa-xmark close"></i>
+  
+
+    <div class="progress"></div>
 </div>
 <% } %>
 
 <% if(error && error.length) {%>
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
-    <%= error %>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
+
+    <div class="toast">
+  
+        <div class="toast-content">
+          <i class="check">⚒️</i>
+          
+          <div class="message">
+            <span class="text text-1">Error</span>
+            <span class="text text-2"><%= error %></span>
+          </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+      
+    
+        <div class="progress"></div>
+    </div>
+
 <% } %>

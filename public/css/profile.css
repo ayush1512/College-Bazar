@@ -314,12 +314,6 @@ button.createbtn i {
 }
 
 @media (max-width: 400px) {
-  .body {
-    
-  }
-
-  .profile-header h3 {
-  }
 
   .profile-option {
     width: 30px;
@@ -367,6 +361,7 @@ button.createbtn i {
   border-radius: 6px;
   overflow: hidden;
   position: relative;
+  margin: 20px;
 }
 
 .post-img {
@@ -398,13 +393,14 @@ button.createbtn i {
 .post-info h2 {
   font-size: 1.5rem;
   margin-left: -27px;
+  color: white;
 }
 
 .post-info h3 {
   font-size: 1rem;
   margin-left:-27px;
+  color: white;
 }
-
 .profile-posts {
   margin-top: 20px;
     height: 412px;

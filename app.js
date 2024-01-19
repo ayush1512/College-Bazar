@@ -27,24 +27,13 @@ useUnifiedTopology: true})
     console.log('MONGO open');
     // listening app that it is running
     app.listen(3000,()=>{
-        console.log('litneing 3000')
+        console.log('listening 3000')
     })
 })
 .catch(err =>{
     console.log('CONNECTIO ERROR!!!!!!!!!!!!!!');
     console.log(err);
 });
-function loadJsonData() {
-    const jsonDataFilePath = path.join(__dirname, 'seed_data', 'data.json');
-  
-    try {
-      const jsonData = fs.readFileSync(jsonDataFilePath, 'utf-8');
-      return JSON.parse(jsonData);
-    } catch (error) {
-      console.error('Error loading JSON data:', error);
-      return null;
-    }
-}
 
 
 app.engine('ejs', ejsMate);

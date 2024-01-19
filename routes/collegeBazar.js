@@ -29,13 +29,13 @@ router.post('/products', upload.array('fileToUpload', 15), isLoggedIn, catchAsyn
     const files = req.files;
 
     const productDetail = new collegeBazarProducts(req.body.productDetail);
-    productDetail.fileToUpload=req.files.map(f => ({url:f.path , filename:f.filename}))
+    productDetail.fileToUpload=await req.files.map(f => ({url:f.path , filename:f.filename}))
     productDetail.author=req.user._id
   
     await productDetail.save();
 
     req.flash('success', 'Successfully made a new Product!');
-    res.redirect(`/products/${productDetail._id}`);
+    res.redirect(`/profile`);
 }));
 
 
