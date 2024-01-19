@@ -27,7 +27,7 @@ useUnifiedTopology: true})
     console.log('MONGO open');
     // listening app that it is running
     app.listen(3000,()=>{
-        console.log('litneing 3000')
+        console.log('listening 3000')
     })
 })
 .catch(err =>{
