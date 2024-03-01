@@ -141,7 +141,7 @@ h2 {
 }
 
 .creator-card .creator-description button:hover {
-    background-color: #e60000;
+    background-color: black;
 }
 
 .creator-card.flipped .creator-description button {
