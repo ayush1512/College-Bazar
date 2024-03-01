@@ -76,6 +76,7 @@ h2 {
 
 .creator-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0px 0px 20px 0px darkcyan;
 }
 
 .creator-card img {
