@@ -14,5 +14,10 @@ Product Page to be created IS DONE
 Product Space Page to be created
 Edit from Page to be created
 
+NEW:
+Dark Mode Switch
+Database Products addition
+
+
 
 WARNING: Never Use scroll Class in navbar if you have to link Another HTML page

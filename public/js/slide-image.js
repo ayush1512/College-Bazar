@@ -1,9 +1,12 @@
 const welcomeHeros = document.querySelector('.welcome-hero');
 
 const imageArray = [
-  '../images/welcome-hero/pexels-gabriel-freytez-341523.jpg',
-  '../images/welcome-hero/pexels-math-90946.jpg',
-  '../images/welcome-hero/microphone.jpg'
+  '../images/welcome-hero/e1.jpg',
+  '../images/welcome-hero/e2.jpg',
+  '../images/welcome-hero/e3.jpg',
+  '../images/welcome-hero/e4.jpg',
+  '../images/welcome-hero/e5.jpg',
+  '../images/welcome-hero/e6.jpg'
 ];
 
 let currentIndex = 0;
