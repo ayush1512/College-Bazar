@@ -346,7 +346,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: ivory;}
     color:  #fff;
     width:  170px;
     height:  70px;
-    background:  darkcyan;
+    background:  black;
     text-transform:  capitalize;
     margin-left:  21px;
     border-radius: 24px;
@@ -356,7 +356,7 @@ nav.navbar.bootsnav .navbar-toggle i{color: ivory;}
     -o-transition: 0.3s linear; 
     transition: 0.3s linear;
 }
-.welcome-hero-btn:hover{/*background: #fd4043;*/background: #f43032;}
+.welcome-hero-btn:hover{/*background: #fd4043;*/background: darkcyan;}
 
 .welcome-hero-btn svg {
     width:  14px;
