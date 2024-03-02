@@ -34,7 +34,7 @@ $(".profileNav ul li").click(function() {
     bio.innerText = bio.oldText;
     bio.innerHTML +=
       "&nbsp;" + `<span onclick='bioText()' id='see-less-bio'>See Less</span>`;
-    document.getElementById("see-less-bio").addEventListener("click", () => {
+      document.getElementById("see-less-bio").addEventListener("click", () => {
       document.getElementById("see-less-bio").style.display = "none";
     });
   }
