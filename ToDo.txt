@@ -11,12 +11,18 @@ Contact Us page to be created IS DONE
 Post page to be created IS DONE
 About Us page to be created IS DONE
 Product Page to be created IS DONE
-Product Space Page to be created
-Edit from Page to be created
+Product Space Page to be created IS DONE
 
 NEW:
+Edit from Page to be created
 Dark Mode Switch
 Database Products addition
+Log Out Page
+Flash
+Profile Page update
+Connect Profile Image to Database
+React FrontEnd
+React BackEnd
 
 
 
