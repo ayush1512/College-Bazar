@@ -21,19 +21,23 @@ const userRoutes = require('./routes/users');
 const collegeBazarRoutes = require('./routes/collegeBazar');
 
 // conecting server
-mongoose.connect('mongodb://127.0.0.1:27017/college-bazar',{ useNewUrlParser: true, 
-useUnifiedTopology: true})
-.then(async ()=>{
-    console.log('MONGO open');
-    // listening app that it is running
-    app.listen(3000,()=>{
-        console.log('listening 3000')
-    })
+// mongoose.connect('mongodb://127.0.0.1:27017/college-bazar',{ useNewUrlParser: true, 
+// useUnifiedTopology: true})
+// .then(async ()=>{
+//     console.log('MONGO open');
+//     // listening app that it is running
+//     app.listen(3000,()=>{
+//         console.log('listening 3000')
+//     })
+// })
+// .catch(err =>{
+//     console.log('CONNECTION ERROR!!!!!!!!!!!!!!');
+//     console.log(err);
+// });
+
+app.listen(3000, ()=>{
+  console.log("Listening on 3000");
 })
-.catch(err =>{
-    console.log('CONNECTIO ERROR!!!!!!!!!!!!!!');
-    console.log(err);
-});
 
 
 app.engine('ejs', ejsMate);
