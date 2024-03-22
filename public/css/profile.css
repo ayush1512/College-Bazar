@@ -355,8 +355,8 @@ button.createbtn i {
 }
 
 .post-card {
-  width: 442px;
-  height: 296px;
+  width: 300px;
+  height: 300px;
   border: 1px solid rgb(187, 185, 185);
   border-radius: 6px;
   overflow: hidden;
