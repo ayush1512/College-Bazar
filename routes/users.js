@@ -44,9 +44,13 @@ router.post('/login',loggedIn, passport.authenticate('local', { failureFlash: tr
 })
 
 router.get('/logout',isLoggedIn, (req, res) => {
-    req.logout();
+    req.logout(function (err) {
+        if (err) {
+            return next(err);
+        }
     req.flash('success', "Goodbye!");
     res.redirect('/');
+    });
 })
 
 router.get('/profile',isLoggedIn,catchAsync(async (req,res,next)=>{

@@ -21,6 +21,7 @@ const userRoutes = require('./routes/users');
 const collegeBazarRoutes = require('./routes/collegeBazar');
 
 // conecting server
+<<<<<<< HEAD
 // mongoose.connect('mongodb://127.0.0.1:27017/college-bazar',{ useNewUrlParser: true, 
 // useUnifiedTopology: true})
 // .then(async ()=>{
@@ -37,6 +38,16 @@ const collegeBazarRoutes = require('./routes/collegeBazar');
 
 app.listen(3000, ()=>{
   console.log("Listening on 3000");
+=======
+mongoose.connect(process.env.URL_MONGO,{ useNewUrlParser: true, 
+useUnifiedTopology: true})
+.then(async ()=>{
+    console.log('MONGO open');
+    // listening app that it is running
+    app.listen(3000,()=>{
+        console.log('listening 3000')
+    })
+>>>>>>> a0870a9910f3aa80ae443fb8f8e5d822e3e540da
 })
 
 
