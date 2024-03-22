@@ -21,7 +21,7 @@ const userRoutes = require('./routes/users');
 const collegeBazarRoutes = require('./routes/collegeBazar');
 
 // conecting server
-mongoose.connect('mongodb://127.0.0.1:27017/college-bazar',{ useNewUrlParser: true, 
+mongoose.connect(process.env.URL_MONGO,{ useNewUrlParser: true, 
 useUnifiedTopology: true})
 .then(async ()=>{
     console.log('MONGO open');
