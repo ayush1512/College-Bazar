@@ -21,7 +21,7 @@ const collegeBazarRoutes = require("./routes/collegeBazar");
 
 // conecting server
 mongoose
-  .connect("process.env.URL_MONGO", {
+  .connect(process.env.URL_MONGO, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
