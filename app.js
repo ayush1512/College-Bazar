@@ -26,7 +26,7 @@ useUnifiedTopology: true})
 .then(async ()=>{
     console.log('MONGO open');
     // listening app that it is running
-    app.listen(3000,()=>{
+    app.listen(process.env.PORT,()=>{
         console.log('listening 3000')
     })
 })
