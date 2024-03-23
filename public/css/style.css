@@ -932,8 +932,8 @@ nav.navbar.bootsnav .navbar-toggle i{color: ivory;}
 ===============================*/
 #scroll-Top  .return-to-top {
     position: fixed;
-    right: 30px;
-    bottom: 30px;
+    right: 43px;
+    bottom: 3px;
     display: none;
     width: 40px;
     line-height: 40px;
