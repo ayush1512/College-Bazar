@@ -5,7 +5,7 @@
       <div class="profile-img">
         <% if(currentUser.profileImg){ %>
         <% }else{ %>
-          <img src="../img/User.svg" width="200" alt="Profile Image">
+          <img src="<%= currentUser.photos %>" width="200" alt="Profile Image">
         <% } %>
       </div>
       <div class="profile-nav-info">
@@ -27,7 +27,7 @@
     <div class="main-bd">
       <div class="left-side">
         <div class="profile-side">
-          <p class="mobile-no"><i class="fa fa-phone"></i>+919752296914</p>
+          <p class="mobile-no"><i class="fa fa-phone"></i>+91<%= currentUser.phone %></p>
           <p class="user-mail"><i class="fa fa-envelope"></i> <%= currentUser.email %></p>
           <div class="user-bio">
             <h3>Bio</h3>
@@ -36,8 +36,8 @@
             </p>
           </div>
           <div class="profile-btn">
-            <button type="reset" onclick="location.href='/logout'" class="chatbtn" id="chatBtn"><i class="fa fa-comment"></i> logout</button>
-            <button type="reset" onclick="location.href='/newProduct'"  class="createbtn" id="Create-post"><i class="fa fa-plus"></i> Edit</button>
+            <button type="reset" onclick="location.href='/logout'" class="chatbtn" id="chatBtn"></i>Logout</button>
+            <button type="reset" onclick="location.href='/newProduct'"  class="createbtn" id="Create-post"></i> Edit</button>
           </div>
           <div class="user-rating">
             <h3 class="rating">4.5</h3>
