@@ -389,13 +389,17 @@ button.createbtn i {
 
 .post-info h2 {
   font-size: 1.5rem;
-  margin-left: -27px;
+  /* margin-left: -27px; */
   color: white;
 }
 
 .post-info h3 {
   font-size: 1rem;
+<<<<<<< HEAD
   margin-left: -27px;
+=======
+  /* margin-left:-27px; */
+>>>>>>> 3dc8660a66e4e3a144629376ebc1d8030c565bdc
   color: white;
 }
 .profile-posts {
