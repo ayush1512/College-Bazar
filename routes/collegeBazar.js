@@ -35,7 +35,7 @@ router.post('/products', upload.array('fileToUpload', 15), isLoggedIn, catchAsyn
     await productDetail.save();
 
     req.flash('success', 'Successfully made a new Product!');
-    res.redirect(`/profile`);
+    res.redirect(`/profile2`);
 }));
 
 
