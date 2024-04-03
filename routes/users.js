@@ -56,7 +56,7 @@ router.get('/logout',isLoggedIn, (req, res) => {
 router.get('/profile',isLoggedIn,catchAsync(async (req,res,next)=>{
     const user=await User.findById(req.user._id)
     const product = await collegeBazarProducts.find({ author: user._id })
-    res.render('college-bazar/profile2',{user,product});
+    res.render('college-bazar/profile',{user,product});
 }))
 
 

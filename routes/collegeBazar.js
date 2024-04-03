@@ -22,6 +22,11 @@ router.get('/',(req,res)=>{
 router.get('/newProduct', isLoggedIn,(req,res)=>{
     res.render('college-bazar/newProduct')
 })
+// router.put('/editProduct',isLoggedIn,catchAsync(async (req,res,next)=>{
+//     const {id} =req.params;
+    
+//     const productDetail = 
+// }));
 
 
 //New Product upload POST
@@ -35,7 +40,7 @@ router.post('/products', upload.array('fileToUpload', 15), isLoggedIn, catchAsyn
     await productDetail.save();
 
     req.flash('success', 'Successfully made a new Product!');
-    res.redirect(`/profile2`);
+    res.redirect(`/profile`);
 }));
 
 
