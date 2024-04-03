@@ -22,11 +22,6 @@ router.get('/',(req,res)=>{
 router.get('/newProduct', isLoggedIn,(req,res)=>{
     res.render('college-bazar/newProduct')
 })
-// router.put('/editProduct',isLoggedIn,catchAsync(async (req,res,next)=>{
-//     const {id} =req.params;
-    
-//     const productDetail = 
-// }));
 
 
 //New Product upload POST
@@ -56,7 +51,15 @@ router.get('/products/:id',catchAsync(async(req,res)=>{
     res.render('college-bazar/product',{prod})
 }))
 
-//
+// Product Detail Edit
+router.put('/products/:id/edit',isLoggedIn,catchAsync(async (req,res,next)=>{
+    const {id} =req.params;
+    
+    const productDetail = await collegeBazarProducts.findByIdAndUpdate(id,{...req.body.productDetail})
+}))
+
+
+// About Us Page
 router.get('/aboutUs',(req,res)=>{
   res.render('college-bazar/aboutUs')
 })
