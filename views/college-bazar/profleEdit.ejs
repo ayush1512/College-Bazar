@@ -1,0 +1,61 @@
+<% layout('layouts/boilearplate') %>
+    <% block('head').append('<link rel="stylesheet" href="../css/profileEdit.css">') %>
+    <div class="container">
+        <h1>Edit Profile</h1>
+        <hr>
+        <div class="row">
+          <!-- left column -->
+          <div class="col-md-3 col-sm-12">
+            <div class="text-center">
+                <img src="https://png.pngitem.com/pimgs/s/150-1503945_transparent-user-png-default-user-image-png-png.png"
+                    class="avatar img-circle" alt="avatar" style="height: 200px; width: 200px;">
+                <label for="file" class="custom-file-upload">
+                    Upload File
+                </label>
+                <input type="file" id="file" name="file">
+            </div>
+        </div>
+    
+          <!-- edit form column -->
+          <div class="col-md-9 col-sm-12 personal-info" style="padding: 0px 0px 0px 50px">
+            <h3>Personal info</h3>
+    
+            <form class="form-horizontal" role="form">
+              <div class="form-group">
+                <label class="col-md-3 control-label">Username:</label>
+                <div class="col-md-8">
+                  <input class="form-control" type="text" >
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-3 control-label">Email:</label>
+                <div class="col-lg-8">
+                  <input class="form-control" type="text" >
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-3 control-label">Password:</label>
+                <div class="col-md-8">
+                    <input class="form-control" type="password" id="password">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label">Confirm password:</label>
+                <div class="col-md-8">
+                    <input class="form-control" type="password" id="confirmPassword">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-8">
+                    <input type="submit" class="btn btn-primary" value="Save Changes">
+                    <span></span>
+                    <input type="reset" class="btn btn-default" value="Cancel">
+                </div>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <hr>
+  <% block('footer').append('<script src="../js/profileEdit.js"></script>') %>
