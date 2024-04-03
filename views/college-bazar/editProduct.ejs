@@ -1,5 +1,5 @@
 <%- layout('layouts/boilearplate') %>
-<% block('head').append('<link rel="stylesheet" href="../css/newProduct.css">') %>
+<% block('head').append('<link rel="stylesheet" href="/css/newProduct.css">') %>
     <form action="/products/<%= prod._id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
         <div>
             <div>

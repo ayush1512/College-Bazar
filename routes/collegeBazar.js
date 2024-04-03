@@ -58,7 +58,7 @@ router.get('/products/:id/edit',isLoggedIn, catchAsync(async (req,res,next)=>{
 router.put('/products/:id',isLoggedIn, catchAsync(async (req,res,next)=>{
     const {id} =req.params;
     const prod = await collegeBazarProducts.findByIdAndUpdate(id,{...req.body.productDetail});
-    const imgs = await req.files.map(f => ({url:f.path , filename:f.filename}));
+    // const imgs = await req.files.map(f => ({url:f.path , filename:f.filename}));
     prod.fileToUpload.push(...imgs)
     await prod.save();
     req.flash('success','Successfully updated Product!');
