@@ -19,6 +19,8 @@ Dark Mode Switch
 Database Products addition IS DONE
 BioData users.js
 User Profile form
+Profile List
+Product Page
 REST Edit
 Home 
 Product Search
