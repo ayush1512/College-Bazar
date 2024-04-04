@@ -10,58 +10,21 @@
   </div>
 </div>
 <div class="products products-table">
-  <div class="product">
-    <div class="product-img">
-      <img src="https://placeimg.com/400/650/animals">
-    </div>
-    <div class="product-content">
-      <h3>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-        <small>Consectetur Adipisicing</small>
-      </h3>
-      <p class="product-text price">$9.99</p>
-      <p class="product-text genre">DVD Rental</p>
-    </div>
-  </div>
-  <div class="product">
-    <div class="product-img">
-      <img src="https://placeimg.com/400/650/nature">
-    </div>
-    <div class="product-content">
-      <h3>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti maxime doloribus sint, repudiandae.
-        <small>Consectetur Adipisicing</small>
-      </h3>
-      <p class="product-text price">$9.99</p>
-      <p class="product-text genre">DVD Rental</p>
-    </div>
-  </div>
-  <div class="product">
-    <div class="product-img">
-      <img src="https://placeimg.com/400/650/tech">
-    </div>
-    <div class="product-content">
-      <h3>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        <small>Consectetur Adipisicing</small>
-      </h3>
-      <p class="product-text price">$9.99</p>
-      <p class="product-text genre">DVD Rental</p>
-    </div>
-  </div>
-  <div class="product">
-    <div class="product-img">
-      <img src="https://placeimg.com/400/650/sepia">
-    </div>
-    <div class="product-content">
-      <h3>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-        <small>Consectetur Adipisicing</small>
-      </h3>
-      <p class="product-text price">$9.99</p>
-      <p class="product-text genre">DVD Rental</p>
-    </div>
-  </div>
+  <% for (product of prod){ %>
+    <div class="product" onclick="location.href='/products/<%= product._id %>'">
+        <div class="product-img">
+          <img src="<%= product.fileToUpload[0]['url'] %>">
+        </div>
+        <div class="product-content">
+          <h3>
+            <%= product.title %>
+            <small><%= product.brand  %></small>
+          </h3>
+          <p class="product-text price"><%= product.price %></p>
+          <p class="product-text genre"><%= product.category %></p>
+        </div>
+      </div>
+  <% } %>
 </div>
 
 <% block('footer').append('<script src="/js/productsList.js"></script>') %>
