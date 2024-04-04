@@ -1,6 +1,67 @@
 <%- layout('layouts/boilearplate') %>
 <% block('head').append('<link rel="stylesheet" href="../css/productList.css">') %>
 <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel='stylesheet' type='text/css'>
-<button id="switchView">Switch View</button>
-<div id="products"></div>
-<script src="../js/productList.js"></script>
+<div class="tools">
+  <div class="search-area">
+    <input type="text" id="search" placeholder="Search" /> <button id="searchbutton">Go</button>
+  </div>
+  <div class="settings">
+    <button id="view">Switch View</button>
+  </div>
+</div>
+<div class="products products-table">
+  <div class="product">
+    <div class="product-img">
+      <img src="https://placeimg.com/400/650/animals">
+    </div>
+    <div class="product-content">
+      <h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit
+        <small>Consectetur Adipisicing</small>
+      </h3>
+      <p class="product-text price">$9.99</p>
+      <p class="product-text genre">DVD Rental</p>
+    </div>
+  </div>
+  <div class="product">
+    <div class="product-img">
+      <img src="https://placeimg.com/400/650/nature">
+    </div>
+    <div class="product-content">
+      <h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti maxime doloribus sint, repudiandae.
+        <small>Consectetur Adipisicing</small>
+      </h3>
+      <p class="product-text price">$9.99</p>
+      <p class="product-text genre">DVD Rental</p>
+    </div>
+  </div>
+  <div class="product">
+    <div class="product-img">
+      <img src="https://placeimg.com/400/650/tech">
+    </div>
+    <div class="product-content">
+      <h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        <small>Consectetur Adipisicing</small>
+      </h3>
+      <p class="product-text price">$9.99</p>
+      <p class="product-text genre">DVD Rental</p>
+    </div>
+  </div>
+  <div class="product">
+    <div class="product-img">
+      <img src="https://placeimg.com/400/650/sepia">
+    </div>
+    <div class="product-content">
+      <h3>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit
+        <small>Consectetur Adipisicing</small>
+      </h3>
+      <p class="product-text price">$9.99</p>
+      <p class="product-text genre">DVD Rental</p>
+    </div>
+  </div>
+</div>
+
+<% block('footer').append('<script src="/js/productsList.js"></script>') %>

@@ -124,6 +124,7 @@ a:hover {
 .reviews {
   display: flex;
   margin: 16px 0;
+  padding: 0px;
 }
 .reviews p {
   font-size: 15px;

@@ -40,8 +40,8 @@ router.post('/products', upload.array('fileToUpload', 15), isLoggedIn, catchAsyn
 
 // Product list
 router.get('/products',catchAsync(async(req,res)=>{
-    const products= await collegeBazarProducts.find({}).populate('author')
-    res.render('college-bazar/productsList',{products})
+    const prod= await collegeBazarProducts.find({}).populate('author')
+    res.render('college-bazar/productList',{prod})
 }));
 
 // Product Detail
