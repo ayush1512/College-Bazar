@@ -50,30 +50,27 @@ router.get('/products/:id',catchAsync(async(req,res)=>{
     res.render('college-bazar/product',{prod})
 }));
 
-router.get('/products/:id/edit',isLoggedIn, catchAsync(async (req,res,next)=>{
+router.get('/products/:id/edit',isLoggedIn,isAuthor, catchAsync(async (req,res,next)=>{
     const prod =await collegeBazarProducts.findById(req.params.id).populate('author')
     res.render('college-bazar/editProduct', {prod})
 }));
 
-router.put('/products/:id', isLoggedIn, catchAsync(async (req, res, next) => {
+router.put('/products/:id', upload.array('fileToUpload'),isLoggedIn,isAuthor,catchAsync(async (req, res) => {
     const { id } = req.params;
     const prod = await collegeBazarProducts.findById(id);
     if (!prod) {
-        req.flash('error', 'Cannot find that product!');
-        return res.redirect('/products');
+        req.flash('error', 'Product not found');
+        return res.redirect(`/products/${id}`);
     }
-    if (req.body.productDetail) {
-        prod.set(req.body.productDetail);
-    }
+    const updatedProduct = await collegeBazarProducts.findByIdAndUpdate(id, { ...req.body.productDetail });
     if (req.files) {
         const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }));
-        prod.fileToUpload.push(...imgs);
+        updatedProduct.fileToUpload.push(...imgs);
     }
-    await prod.save();
+    await updatedProduct.save();
     req.flash('success', 'Successfully updated Product!');
-    res.redirect(`/products/${prod._id}`);
+    res.redirect(`/products/${updatedProduct._id}`);
 }));
-
 router.delete('/products/:id', isLoggedIn, isAuthor, catchAsync(async (req,res,next)=>{
     const {id}= req.params;
     await collegeBazarProducts.findByIdAndDelete(id);

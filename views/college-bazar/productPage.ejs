@@ -7,11 +7,11 @@
        <div class="cart-wrapper">
           <article class="cart-content">
              <picture class="cart-image">
-                <img src="https://i.ibb.co/3msVHYZ/sneaker-image.png" alt="product">
+                <img src="<%= prod.fileToUpload[0]['url'] %>" alt="product">
              </picture>
              <div class="cart-detail">
-                <h3 class="text-base font-semi">Nike Air Motion Max</h3>
-                <p class="text-small font-medium">$199.00</p>
+                <h3 class="text-base font-semi"><%= prod.title %></h3>
+                <p class="text-small font-medium"><%= prod.price %></p>
                 <div class="cart-counter">
                    <div class="cart-block">
                       <button class="cart-button" role="button">
@@ -35,8 +35,8 @@
                 <img src="https://i.ibb.co/3msVHYZ/sneaker-image.png" alt="product">
              </picture>
              <div class="cart-detail">
-                <h3 class="text-base font-semi">Nike Air Motion One</h3>
-                <p class="text-small font-medium">$199.00</p>
+                <h3 class="text-base font-semi"><%= prod.title %></h3>
+                <p class="text-small font-medium"><%= prod.price %></p>
                 <div class="cart-counter">
                    <div class="cart-block">
                       <button class="cart-button" role="button">
@@ -59,7 +59,7 @@
        <div class="cart-checkout">
           <div class="cart-total">
              <p class="text-base font-medium">Total:</p>
-             <p class="text-medium font-semi">$398.00</p>
+             <p class="text-medium font-semi"><%= prod.price %></p>
           </div>
           <button class="btn btn-darken">
              Checkout <i class="bx bx-chevron-right"></i>
@@ -74,17 +74,16 @@
           </div>
           <div class="wrapper-content">
              <div class="wrapper-inform">
-                <span class="badge badge-darken">Man's Shoes</span>
-                <h1 class="display-medium font-bold">Nike Air Motion Max</h1>
+                <span class="badge badge-darken"><%= prod.brand %></span>
+                <h1 class="display-medium font-bold"><%= prod.title %></h1>
                 <p class="text-base font-normal">
-                   The combine of breathable mesh without seams for wonderful traditional
-                   and modern style to add the perfect amount of flash to make you shine.
+                  <%= prod.description %>
                 </p>
              </div>
              <div class="wrapper-detail">
                 <div class="price">
                    <span class="text-base font-medium">Price:</span>
-                   <h3 class="text-large font-semi">$199.00</h3>
+                   <h3 class="text-large font-semi"><%= prod.price %></h3>
                 </div>
                 <div class="sizes">
                    <span class="text-base font-medium">Sizes:</span>
