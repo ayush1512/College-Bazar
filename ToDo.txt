@@ -21,7 +21,7 @@ BioData users.js
 User Profile form DONE
 Product List DONE
 Product Page
-REST Edit
+REST Edit Done
 Home 
 Product Search
 

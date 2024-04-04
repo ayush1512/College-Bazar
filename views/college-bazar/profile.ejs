@@ -16,12 +16,12 @@
         </div>
   
       </div>
-      <div class="profile-option">
+      <!-- <div class="profile-option">
         <div class="notification">
           <i class="fa fa-bell"></i>
           <span class="alert-message">3</span>
         </div>
-      </div>
+      </div> -->
     </div>
   
     <div class="main-bd">
@@ -39,32 +39,14 @@
             <button type="reset" onclick="location.href='/logout'" class="chatbtn" id="chatBtn"></i>Logout</button>
             <button type="reset" onclick="location.href='/newProduct'"  class="createbtn" id="Create-post"></i> Edit</button>
           </div>
-          <div class="user-rating">
-            <h3 class="rating">4.5</h3>
-            <div class="rate">
-              <div class="star-outer">
-                <div class="star-inner">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                </div>
-              </div>
-              <span class="no-of-user-rate"><span>123</span>&nbsp;&nbsp;reviews</span>
-            </div>
-  
-          </div>
         </div>
-  
       </div>
-      <div class="right-side" style="width: 100%;">
+      <div class="right-side" style="width: 100%; padding: 10px; border-radius: 5px;">
   
         <div class="profileNav">
           <ul>
-            <li onclick="tabs(0)" class="user-post active">Posts</li>
-            <li onclick="tabs(1)" class="user-review">Reviews</li>
-            <li onclick="tabs(2)" class="user-setting"> Settings</li>
+            <button onclick="tabs(0)" class="user-post" style="padding: 5px; font-size: 1.5rem; font-weight: 600;">Posts</button>
+            <button onclick="tabs(1)" class="user-review" style="padding: 5px; font-size: 1.5rem; font-weight: 600;">Reviews</button>
           </ul>
         </div>
         <div class="profile-body">
