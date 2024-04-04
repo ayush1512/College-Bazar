@@ -37,5 +37,17 @@
                     <button type="submit">Submit</button>
                 </div>
             </div>
+            <div>
+                <h2>Product Images</h2>
+                <div>
+                    <% prod.fileToUpload.forEach(function(photo,i){ %>
+                        <img src="<%= photo['url'] %>" alt="Product Image">
+                        <div>
+                            <input type="checkbox" id="photo-<%= i %>" name="deleteImages[]" value="<%= photo.filename %>">
+                        </div>
+                        <label for="photo-<%= i %>">Delete</label>
+                    <% }) %>
+                </div>
+            </div>
     </form>
     <script src="../js/newProduct.js"></script>

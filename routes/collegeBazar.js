@@ -3,6 +3,7 @@ const path=require('path');
 const router = express.Router();
 const { isLoggedIn, isAuthor } = require('../middleware');
 const collegeBazarProducts = require('../models/college-bazar');
+const {cloudinary} = require('../cloudinary')
 const fs = require('fs');
 const flash = require('connect-flash');
 const LocalStrategy = require('passport-local');
@@ -25,7 +26,7 @@ router.get('/newProduct', isLoggedIn,(req,res)=>{
 
 
 //New Product upload POST
-router.post('/products', upload.array('fileToUpload', 15), isLoggedIn, catchAsync( async (req, res, next) => {
+router.post('/products', upload.array('fileToUpload', 4), isLoggedIn, catchAsync( async (req, res, next) => {
 
     const productDetail = new collegeBazarProducts(req.body.productDetail);
     productDetail.fileToUpload=await req.files.map(f => ({url:f.path , filename:f.filename}))
@@ -68,12 +69,23 @@ router.put('/products/:id', upload.array('fileToUpload'),isLoggedIn,isAuthor,cat
         updatedProduct.fileToUpload.push(...imgs);
     }
     await updatedProduct.save();
+    if(req.body.deleteImages){
+        for(let filename of req.body.deleteImages){
+            await cloudinary.uploader.destroy(filename);
+        }
+        await updatedProduct.updateOne({$pull:{fileToUpload:{filename:{$in:req.body.deleteImages}}}})
+    }
     req.flash('success', 'Successfully updated Product!');
     res.redirect(`/products/${updatedProduct._id}`);
 }));
 router.delete('/products/:id', isLoggedIn, isAuthor, catchAsync(async (req,res,next)=>{
     const {id}= req.params;
+    const prod = await collegeBazarProducts.findById(id);
+    for(let file of prod.fileToUpload){
+        await cloudinary.uploader.destroy(file.filename);
+    }
     await collegeBazarProducts.findByIdAndDelete(id);
+    req.flash('success', 'Successfully deleted Product');
     res.redirect('/profile');
 }))
 
