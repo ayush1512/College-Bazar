@@ -55,13 +55,22 @@ router.get('/products/:id/edit',isLoggedIn, catchAsync(async (req,res,next)=>{
     res.render('college-bazar/editProduct', {prod})
 }));
 
-router.put('/products/:id',isLoggedIn, catchAsync(async (req,res,next)=>{
-    const {id} =req.params;
-    const prod = await collegeBazarProducts.findByIdAndUpdate(id,{...req.body.productDetail});
-    // const imgs = await req.files.map(f => ({url:f.path , filename:f.filename}));
-    prod.fileToUpload.push(...imgs)
+router.put('/products/:id', isLoggedIn, catchAsync(async (req, res, next) => {
+    const { id } = req.params;
+    const prod = await collegeBazarProducts.findById(id);
+    if (!prod) {
+        req.flash('error', 'Cannot find that product!');
+        return res.redirect('/products');
+    }
+    if (req.body.productDetail) {
+        prod.set(req.body.productDetail);
+    }
+    if (req.files) {
+        const imgs = req.files.map(f => ({ url: f.path, filename: f.filename }));
+        prod.fileToUpload.push(...imgs);
+    }
     await prod.save();
-    req.flash('success','Successfully updated Product!');
+    req.flash('success', 'Successfully updated Product!');
     res.redirect(`/products/${prod._id}`);
 }));
 
