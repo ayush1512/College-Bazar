@@ -1,6 +1,30 @@
 <%- layout('layouts/boilearplate') %>
 <% block('head').append('<link rel="stylesheet" href="../css/productList.css">') %>
 <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel='stylesheet' type='text/css'>
-<button id="switchView">Switch View</button>
-<div id="products"></div>
-<script src="../js/productList.js"></script>
+<div class="tools">
+  <div class="search-area">
+    <input type="text" id="search" placeholder="Search" /> <button id="searchbutton">Go</button>
+  </div>
+  <div class="settings">
+    <button id="view">Switch View</button>
+  </div>
+</div>
+<div class="products products-table">
+  <% for (product of prod){ %>
+    <div class="product" onclick="location.href='/products/<%= product._id %>'">
+        <div class="product-img">
+          <img src="<%= product.fileToUpload[0]['url'] %>">
+        </div>
+        <div class="product-content">
+          <h3>
+            <%= product.title %>
+            <small><%= product.brand  %></small>
+          </h3>
+          <p class="product-text price"><%= product.price %></p>
+          <p class="product-text genre"><%= product.category %></p>
+        </div>
+      </div>
+  <% } %>
+</div>
+
+<% block('footer').append('<script src="/js/productsList.js"></script>') %>

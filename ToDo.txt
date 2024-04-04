@@ -20,8 +20,8 @@ Database Products addition IS DONE
 BioData users.js
 User Profile form DONE
 Product List DONE
-Product Page
-REST Edit Done
+Product Page 
+REST Edit DONE
 Home 
 Product Search
 

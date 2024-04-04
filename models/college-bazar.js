@@ -10,6 +10,7 @@ const CollegeBazarSchema = new Schema({
     fileToUpload: [{url: String, filename:String}],
     location: String,
     phone:Number,
+    deleteImages: [],
     author: {
         type: Schema.Types.ObjectId,
         ref: 'User'

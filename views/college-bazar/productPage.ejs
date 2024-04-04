@@ -10,26 +10,13 @@
            id="ProductImg"
          />
          <div class="small-imgs">
-           <img
-             src="<%= prod.fileToUpload[0]['url']%>"
-             width="100%"
-             class="small-img"
-           />
-           <img
-             src="<%= prod.fileToUpload[1]['url']%>"
-             width="100%"
-             class="small-img"
-           />
-           <img
-             src="<%= prod.fileToUpload[2]['url']%>"
-             width="100%"
-             class="small-img"
-           />
-           <img
-             src="<%= prod.fileToUpload[3]['url']%>"
-             width="100%"
-             class="small-img"
-           />
+          <% for(link of prod.fileToUpload) {%>
+            <img
+            src="<%= link['url']%>"
+            width="100%"
+            class="small-img"
+            />
+          <% } %>
          </div>
        </div>
        <div class="col-md-6">
@@ -47,17 +34,6 @@
          <div class="price">
            <span>&#8377;<%= prod.price %></span>
            <span>&#8377;<%= prod.price %></span>
-         </div>
-         <div class="row">
-           <div class="col-md-4">
-             <h4>Color</h4>
-             <div class="colors">
-               <div class="black"></div>
-               <div class="red"></div>
-               <div class="white"></div>
-               <div class="yellow"></div>
-             </div>
-           </div>
          </div>
          <div id="product" class="product-inf">
            <ul>
