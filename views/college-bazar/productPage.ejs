@@ -105,5 +105,11 @@
           </div>
        </div>
     </section>
+    <form action="/products/<%= prod._id %>?_method=DELETE" method="POST">
+      <button class="btn btn-danger">DELETE</button>    
+   </form>
+   <div>
+      <button type="reset" onclick="location.href='/products/<%= prod._id %>/edit'"></i> Edit</button>
+   </div>
  </main>
  <% block('footer').append('<script src="../js/productPage.js"></script>') %>

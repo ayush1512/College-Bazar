@@ -71,14 +71,16 @@
           <div class="profile-posts tab">
             <% if(product){ %>
               <% for(prod of product){ %>
-                <div class="post-card">
-                  <div class="post-img">
-                      <img src="<%= prod.fileToUpload[0].url %>" alt="Post Image">
-                  </div>
-                  <div class="post-info">
-                      <h2><%= prod.title  %></h2>
-                      <h3><%= prod.brand  %></h3>
-                  </div>
+                <a href="/products/<%= prod._id %>" style="margin: 0;padding: 0;">
+                  <div class="post-card">
+                    <div class="post-img">
+                        <img src="<%= prod.fileToUpload[0].url %>" alt="Post Image">
+                    </div>
+                    <div class="post-info">
+                        <h2><%= prod.title  %></h2>
+                        <h3><%= prod.brand  %></h3>
+                    </div>
+                </a>
             </div>
             <% } %>
             <% } %>
