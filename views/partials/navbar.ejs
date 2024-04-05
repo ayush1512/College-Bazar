@@ -21,7 +21,7 @@
                   <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                     <!-- Add search bar here -->
                     <li>
-                      <form class="navbar-form" role="search">
+                      <form class="navbar-form" role="search" action="/products" method="GET">
                         <div class="input-group">
                           <input type="text" class="form-control" placeholder="Search" name="q" style="border-radius: 65px 0px 0px 65px;">
                           <div class="input-group-btn">
@@ -30,8 +30,7 @@
                         </div>
                       </form>
                     </li>
-                    <li class="scroll"><a href="/#explore">explore</a></li>
-                    <!--<li ><a href="/products">Products</a></li>-->
+                      <li ><a href="/products">Products</a></li>
                       <li><a href="/contactUs">contact</a></li>
                       <li><a href="/aboutUs">About Us</a></li>
                       <% if(!currentUser){ %>

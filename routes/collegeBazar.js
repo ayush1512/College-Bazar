@@ -41,9 +41,24 @@ router.post('/products', upload.array('fileToUpload', 4), isLoggedIn, catchAsync
 
 // Product list
 router.get('/products',catchAsync(async(req,res)=>{
-    const prod= await collegeBazarProducts.find({}).populate('author')
-    res.render('college-bazar/productList',{prod})
+    let query = req.query.q;
+        if (query) {
+            query = query.toLowerCase(); // Convert the search query to lowercase
+            const terms = query.split(' ').map(term => new RegExp(term, 'i'));
+            const searchConditions = terms.map(term => ({
+                $or: [
+                    { category: { $regex: term } },
+                    { brand: { $regex: term } },
+                    { title: { $regex: term } },
+                    { description: { $regex: term } },
+                    { location: { $regex: term } }
+                ]
+            }));
+            const prod = await collegeBazarProducts.find({ $or: searchConditions }).populate('author');
+            res.render('college-bazar/productList', { prod });
+        }
 }));
+
 
 // Product Detail
 router.get('/products/:id',catchAsync(async(req,res)=>{
