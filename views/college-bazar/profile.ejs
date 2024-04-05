@@ -3,9 +3,10 @@
 <div>
     <div class="profile-header">
       <div class="profile-img">
-        <% if(currentUser.profileImg){ %>
+        <% if(currentUser.photos){ %>
+          <img src="<%= currentUser.photos['url'] %>" width="200" alt="Profile Image">
         <% }else{ %>
-          <img src="<%= currentUser.photos %>" width="200" alt="Profile Image">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" width="200" alt="Profile Image">
         <% } %>
       </div>
       <div class="profile-nav-info" >
@@ -45,7 +46,7 @@
   
         <div class="profileNav">
           <ul>
-            <h2 onclick="tabs(0)" class="user-post" style="font-size: 1.5rem; font-weight: 600;">Posts</h2>
+            <h2 class="user-post" style="font-size: 1.5rem; font-weight: 600;">Posts</h2>
             <!-- <button onclick="tabs(1)" class="user-review" style="padding: 5px; font-size: 1.5rem; font-weight: 600;">Reviews</button> -->
           </ul>
         </div>

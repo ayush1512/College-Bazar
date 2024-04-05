@@ -8,6 +8,7 @@
            src="<%= prod.fileToUpload[0]['url']%>"
            width="100%"
            id="ProductImg"
+           style="width: 250px; height: 250px; "
          />
          <div class="small-imgs">
           <% for(link of prod.fileToUpload) {%>
@@ -20,7 +21,9 @@
          </div>
        </div>
        <div class="col-md-6">
-         <h1 class="product-title">
+        <h6 style="border: 0.5px solid black; border-radius: 20px; width: fit-content; padding: 5px; background-color: black; color: white; font-size: xx-small"><%= prod.category %> </h6>
+        <p style="margin: 0px 0px;font-size: large;"><%= prod.brand %></p>
+         <h1 class="product-title" style="margin: 0px 0px 10px 0px;">
            <%= prod.title %>
          </h1>
          <div class="price">
