@@ -25,6 +25,15 @@ REST Edit DONE
 Home 
 Product Search
 
-
+Profile Edit:
+>name
+>email
+>password
+>phone
+>year
+>branch
+>college
+>bio
+>image
 
 WARNING: Never Use scroll Class in navbar if you have to link Another HTML page

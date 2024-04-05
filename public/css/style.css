@@ -59,7 +59,7 @@ a,a:hover,a:active,a:focus {
     text-transform: capitalize;
 }
 h1,h2,h3,h4,h5,h6 { 
-	margin: 16px;
+	margin: 20px 0px;
 	color:#343a3f;
     font-size: 18px;
     font-weight: 500;

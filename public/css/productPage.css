@@ -16,7 +16,16 @@ a:hover {
   justify-content: center;
   background: #000;
 }
+.btns {
+  color: #fff; /* Changed text color on hover */
+  background-color: black; /* Added background color on hover */
+  padding: 10px; /* Added padding on hover */
+  border-radius: 5px; /* Added border radius on hover */
+  transition: all 0.3s ease; /* Added transition effect */
+}
+
 .cart {
+  height: 500px;
   background: #fff;
   padding: 50px;
   border-radius: 20px;
@@ -178,12 +187,24 @@ a:hover {
 #Details {
   display: none;
 }
+.custom-btn.call {
+  color: #fff;
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
 
+.custom-btn.call i {
+  transition: all 0.3s ease;
+}
 .custom-btn {
   background: #000;
   color: #fff;
   display: block;
-  width: 200px;
+  width: 120px;
   text-align: center;
   font-size: 16px;
   border-radius: 25px;
@@ -210,10 +231,6 @@ a:hover {
   margin: 0 5px;
   cursor: pointer;
   width: 22%;
-}
-
-.custom-btn i {
-  margin-left: 15px;
 }
 
 .size,
