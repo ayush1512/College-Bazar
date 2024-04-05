@@ -12,8 +12,8 @@
       <div class="profile-nav-info" >
         <h3 class="user-name" style="margin-bottom: -1px;"><%= user.username %></h3>
         <div class="/ress">
-          <p id="state" class="state">Madhya Pradesh,</p>
-          <span id="country" class="country">India.</span>
+          <p id="state" class="state"><%= user.college %></p>
+          <span id="country" class="country">Year <%= user.year %></span>
         </div>
   
       </div>
@@ -33,7 +33,7 @@
           <div class="user-bio" style="margin: 40px 0px;">
             <h3>Bio</h3>
             <p class="bio">
-              Hey, there I am on College-Bazaar your one stop shop for selling buying items.  
+              <%= user.bio %>  
             </p>
           </div>
           <div class="profile-btn">
