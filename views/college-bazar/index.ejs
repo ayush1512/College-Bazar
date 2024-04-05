@@ -6,12 +6,8 @@
         <div id="categories" class="list-topics-content">
           <ul>
             <li>
-              <div class="single-list-topics-content">
-                <div class="single-list-topics-icon">
-                  <i class="flaticon-restaurant"></i>
-                </div>
+              <div class="single-list-topics-content" id="Stationery">
                 <h2><a href="#">Stationery</a></h2>
-
               </div>
             </li>
             <li>
@@ -500,3 +496,12 @@
 
     <!--Custom JS-->
     <script src="../js/custom.js"></script>
+
+    <script>// JavaScript function that adds and removes the 'hovered' class
+      document.getElementById('Stationery').addEventListener('mouseover', function() {
+        this.classList.add('hovered');
+      });
+      
+      document.getElementById('Stationery').addEventListener('mouseout', function() {
+        this.classList.remove('hovered');
+      });</script>
