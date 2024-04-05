@@ -23,17 +23,9 @@
          <h1 class="product-title">
            <%= prod.title %>
          </h1>
-         <div class="reviews">
-           <i class="fas fa-star"></i>
-           <i class="fas fa-star"></i>
-           <i class="fas fa-star"></i>
-           <i class="fas fa-star-half-alt"></i>
-           <i class="far fa-star"></i>
-           <p>240 reviews</p>
-         </div>
          <div class="price">
            <span>&#8377;<%= prod.price %></span>
-           <span>&#8377;<%= prod.price %></span>
+           <span>&#8377;<%= prod.price + 499 %></span>
          </div>
          <div id="product" class="product-inf">
            <ul>
@@ -44,30 +36,43 @@
            </ul>
            <div class="tabs-content">
              <div id="Description">
-               <p>
+               <p style="margin: 20px 0px;">
                  <%= prod.description %>
                </p>
              </div>
              <div id="Details">
-               <p>
+               <p style="margin: 20px 0px;">
                  <%= prod.location %>
                </p>
              </div>
            </div>
          </div>
          <div class="buttons">
-           <div class="row">
-             <div class="col-md-6">
-               <a href="#" class="custom-btn"
-                 >Add To Cart <i class="fas fa-angle-right"></i
-               ></a>
-             </div>
-             <div class="col-md-6">
-               <a href="#" class="custom-btn"
-                 >Buy Now <i class="fas fa-angle-right"></i
-               ></a>
-             </div>
-           </div>
+          <div class="row">
+            <div class="col-md-4">
+              <a href="#" class="custom-btn call" id="contactButton">
+                <span id="buttonText">Contact</span>
+                <i class="fas fa-phone" id="buttonIcon" style="display: none;"></i>
+              </a>
+            </div>
+            <div class="col-md-4">
+              <button class="custom-btn" id="editButton"
+              style="color: #fff; background-color: darkcyan; padding: 10px; border-radius: 5px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='darkcyan';" onmouseleave="this.style.backgroundColor='black';"
+              type="reset" onclick="location.href='/products/<%= prod._id %>/edit'">
+              <span id="editText">Edit</span>
+              <i class="fas fa-pencil-alt" id="editIcon" style="display: none;"></i>
+            </button>
+          </div>
+          <div class="col-md-4">
+            <form action="/products/<%= prod._id %>?_method=DELETE" method="POST" onsubmit="return confirmDelete()">
+              <button class="custom-btn" id="deleteButton" style="color: #fff; background-color: black; padding: 10px; border-radius: 5px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='red';" onmouseleave="this.style.backgroundColor='black';">
+                <span id="deleteText">Delete</span>
+                <i class="fas fa-trash" id="deleteIcon" style="display: none;"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
          </div>
        </div>
      </div>
@@ -90,12 +95,55 @@
    src="https://kit.fontawesome.com/4077c6ef6a.js"
    crossorigin="anonymous"
  ></script>
+ <script>
+  function confirmDelete() {
+    return confirm('Are you sure you want to delete this product?');
+  }
+</script>
+ <script>
+  const deleteButton = document.getElementById('deleteButton');
+  const deleteText = document.getElementById('deleteText');
+  const deleteIcon = document.getElementById('deleteIcon');
 
-   <form action="/products/<%= prod._id %>?_method=DELETE" method="POST">
-      <button class="btn btn-danger">DELETE</button>    
-   </form>
-   <div>
-      <button type="reset" onclick="location.href='/products/<%= prod._id %>/edit'"></i> Edit</button>
-   </div>
+  deleteButton.addEventListener('mouseover', function() {
+    deleteText.style.display = 'none';
+    deleteIcon.style.display = 'inline';
+  });
+
+  deleteButton.addEventListener('mouseout', function() {
+    deleteText.style.display = 'inline';
+    deleteIcon.style.display = 'none';
+  });
+</script>
+<script>
+  const editButton = document.getElementById('editButton');
+  const editText = document.getElementById('editText');
+  const editIcon = document.getElementById('editIcon');
+
+  editButton.addEventListener('mouseover', function() {
+    editText.style.display = 'none';
+    editIcon.style.display = 'inline';
+  });
+
+  editButton.addEventListener('mouseout', function() {
+    editText.style.display = 'inline';
+    editIcon.style.display = 'none';
+  });
+</script>
+ <script>
+  const contactButton = document.getElementById('contactButton');
+  const buttonText = document.getElementById('buttonText');
+  const buttonIcon = document.getElementById('buttonIcon');
+
+  contactButton.addEventListener('mouseover', function() {
+    buttonText.style.display = 'none';
+    buttonIcon.style.display = 'inline';
+  });
+
+  contactButton.addEventListener('mouseout', function() {
+    buttonText.style.display = 'inline';
+    buttonIcon.style.display = 'none';
+  });
+</script>
    <script src="script.js"></script>
  <% block('footer').append('<script src="/js/productPage.js"></script>') %>

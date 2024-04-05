@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
 /* @import url("https://fonts.googleapis.com/css?family=Bree+Serif&display=swap"); */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 .body {
   background: #e9e9e9;
@@ -45,8 +46,9 @@
 .profile-nav-info h3 {
   font-variant: small-caps;
   font-size: 2rem;
-  font-family: sans-serif;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: bold;
+  font-size: x-large;
 }
 
 .profile-nav-info .address {
@@ -213,7 +215,7 @@ button.createbtn i {
   border-radius: 10px; */
 }
 
-.profileNav ul button {
+.profileNav ul h2 {
   padding: 10px;
   background-color: darkcyan;
   width: 100%;

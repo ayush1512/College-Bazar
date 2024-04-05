@@ -8,8 +8,8 @@
           <img src="<%= currentUser.photos %>" width="200" alt="Profile Image">
         <% } %>
       </div>
-      <div class="profile-nav-info">
-        <h3 class="user-name"><%= currentUser.username %></h3>
+      <div class="profile-nav-info" >
+        <h3 class="user-name" style="margin-bottom: -1px;"><%= currentUser.username %></h3>
         <div class="/ress">
           <p id="state" class="state">Madhya Pradesh,</p>
           <span id="country" class="country">India.</span>
@@ -29,7 +29,7 @@
         <div class="profile-side">
           <p class="mobile-no"><i class="fa fa-phone"></i>+91<%= currentUser.phone %></p>
           <p class="user-mail"><i class="fa fa-envelope"></i> <%= currentUser.email %></p>
-          <div class="user-bio">
+          <div class="user-bio" style="margin: 40px 0px;">
             <h3>Bio</h3>
             <p class="bio">
               Hey, there I am on College-Bazaar your one stop shop for selling buying items.  
@@ -45,8 +45,8 @@
   
         <div class="profileNav">
           <ul>
-            <button onclick="tabs(0)" class="user-post" style="padding: 5px; font-size: 1.5rem; font-weight: 600;">Posts</button>
-            <button onclick="tabs(1)" class="user-review" style="padding: 5px; font-size: 1.5rem; font-weight: 600;">Reviews</button>
+            <h2 onclick="tabs(0)" class="user-post" style="font-size: 1.5rem; font-weight: 600;">Posts</h2>
+            <!-- <button onclick="tabs(1)" class="user-review" style="padding: 5px; font-size: 1.5rem; font-weight: 600;">Reviews</button> -->
           </ul>
         </div>
         <div class="profile-body">
