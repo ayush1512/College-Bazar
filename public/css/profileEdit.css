@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+
 .jumbotron-flat {
-  background-color: solid #4DB8FFF;
+  background-color: solid #4DB8FF;
   height: 100%;
   border: 1px solid #4DB8FF;
   background: white;
@@ -9,63 +10,78 @@
   overflow: auto;
   color: var(--dark-color);
 }
+
 .paymentAmt {
   color: var(--dark-color);
   font-size: 80px;
 }
+
 .centered {
   text-align: center;
 }
+
 .title {
   padding-top: 15px;
   color: var(--dark-color);
 }
+
+
 body {
-    background-color: #f8f9fa;
-  }
-  .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-  }
-  .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-  }
-  .custom-file-upload {
-    display: inline-block;
-    padding: 6px 12px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-  .custom-file-upload:hover {
-    background-color: #0056b3;
-  }
-  #file {
-    display: none;
-  }
-  .custom-file-upload {
-      display: inline-block;
-      padding: 6px 12px;
-      cursor: pointer;
-      background-color: #007bff;
-      color: white;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-      margin-top: 10px; /* Add some space between the image and the button */
-  }
-  .custom-file-upload:hover {
-      background-color: #0056b3;
-  }
-  #file {
-      display: none;
-  }
-  .text-center {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-  }
+  background-color: #f8f9fa;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-upload:hover {
+  background-color: #0056b3;
+}
+
+#file {
+  display: none;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  /* Add some space between the image and the button */
+}
+
+.custom-file-upload:hover {
+  background-color: #0056b3;
+}
+
+#file {
+  display: none;
+}
+
+.text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

@@ -61,7 +61,7 @@ router.get('/profile',isLoggedIn,catchAsync(async (req,res,next)=>{
 
 router.get('/profile/edit',isLoggedIn,catchAsync(async (req,res)=>{
     const user=await User.findById(req.user._id);
-    res.render('college-bazar/editProfile',{user});
+    res.render('college-bazar/profleEdit.ejs',{user});
 }));
 
 
