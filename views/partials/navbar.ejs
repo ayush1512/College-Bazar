@@ -19,6 +19,17 @@
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
                   <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                    <!-- Add search bar here -->
+                    <li>
+                      <form class="navbar-form" role="search">
+                        <div class="input-group">
+                          <input type="text" class="form-control" placeholder="Search" name="q" style="border-radius: 65px 0px 0px 65px;">
+                          <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit" style="border-radius: 0px 65px 65px 0px;"><i class="fa fa-search"></i></button>
+                          </div>
+                        </div>
+                      </form>
+                    </li>
                     <li class="scroll"><a href="/#explore">explore</a></li>
                     <!--<li ><a href="/products">Products</a></li>-->
                       <li><a href="/contactUs">contact</a></li>
@@ -28,7 +39,7 @@
                       <% }else{ %>
                         <li><a href="/profile">Profile</a></li>
                       <% } %>
-                      <li  id="button"><a href="/newProduct" >Post</a></li>
+                      <li id="button"><a href="/newProduct">Post</a></li>
                   </ul><!--/.nav -->
               </div><!-- /.navbar-collapse -->
           </div><!--/.container-->

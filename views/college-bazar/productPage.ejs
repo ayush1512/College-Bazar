@@ -50,7 +50,7 @@
              </div>
            </div>
          </div>
-         <div class="buttons">
+         <div clas s="buttons">
           <div class="row">
             <div class="col-md-4">
               <a href="#" class="custom-btn call" id="contactButton">
@@ -60,7 +60,7 @@
             </div>
             <div class="col-md-4">
               <button class="custom-btn" id="editButton"
-              style="color: #fff; background-color: darkcyan; padding: 10px; border-radius: 5px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='darkcyan';" onmouseleave="this.style.backgroundColor='black';"
+              style="color: #fff; background-color: black; padding: 10px; border-radius: 5px; transition: all 0.3s ease;" 
               type="reset" onclick="location.href='/products/<%= prod._id %>/edit'">
               <span id="editText">Edit</span>
               <i class="fas fa-pencil-alt" id="editIcon" style="display: none;"></i>
@@ -68,7 +68,7 @@
           </div>
           <div class="col-md-4">
             <form action="/products/<%= prod._id %>?_method=DELETE" method="POST" onsubmit="return confirmDelete()">
-              <button class="custom-btn" id="deleteButton" style="color: #fff; background-color: black; padding: 10px; border-radius: 5px; transition: all 0.3s ease;" onmouseover="this.style.backgroundColor='red';" onmouseleave="this.style.backgroundColor='black';">
+              <button class="custom-btn" id="deleteButton" style="color: #fff; background-color: black; padding: 10px; border-radius: 5px; transition: all 0.3s ease;" >
                 <span id="deleteText">Delete</span>
                 <i class="fas fa-trash" id="deleteIcon" style="display: none;"></i>
               </button>
