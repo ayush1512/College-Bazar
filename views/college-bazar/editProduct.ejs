@@ -1,0 +1,53 @@
+<%- layout('layouts/boilearplate') %>
+<% block('head').append('<link rel="stylesheet" href="/css/newProduct.css">') %>
+    <form action="/products/<%= prod._id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
+        <div>
+            <div>
+                <h2>Category</h2>
+                <h3><%= prod._id %></h3>
+                <select name="productDetail[category]">
+                    <option <% if(prod.category == "Stationery") {%> selected <% } %>  value="Stationery">Stationery</option>
+                    <option <% if(prod.category == "Books"){%> selected <% } %> value="Books">Books</option>
+                    <option <% if(prod.category == "Utilities"){%> selected <% } %> value="Utilities">Utilities</option>
+                    <option <% if(prod.category == "Services"){%> selected <% } %> value="Services">Services</option>
+                </select>
+            </div>
+            <div>
+                <h2>Details</h2>
+                <input type="text" name="productDetail[brand]" placeholder="Brand" value="<%=  prod.brand %>" required>
+                <input type="text" name="productDetail[title]" placeholder="Add title" value="<%=  prod.title %>" required>
+                <textarea name="productDetail[description]" id="description" cols="30" rows="10" placeholder="Description"><%=  prod.description %></textarea>
+            </div>
+            <div>
+                <h2>Set Price</h2>
+                <input type="number" name="productDetail[price]" min="0" placeholder="Price" value="<%=  prod.price %>">
+            </div>
+            <div>
+                <h2>Upload Photos</h2>
+                <input type="file" accept="image/*" name="fileToUpload" id="fileToUpload" min="0" max="15" multiple>
+            </div>
+            <div>
+                <h2>Location</h2>
+                <input type="text" name="productDetail[location]" placeholder="Location" value="<%=  prod.location %>">
+            </div>
+            <div>
+                <h2>Phone Number</h2>
+                <input type="tel" name="productDetail[phone]" placeholder="Phone Number" value="<%=  prod.phone %>">
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+            <div>
+                <h2>Product Images</h2>
+                <div>
+                    <% prod.fileToUpload.forEach(function(photo,i){ %>
+                        <img src="<%= photo['url'] %>" alt="Product Image">
+                        <div>
+                            <input type="checkbox" id="photo-<%= i %>" name="deleteImages[]" value="<%= photo.filename %>">
+                        </div>
+                        <label for="photo-<%= i %>">Delete</label>
+                    <% }) %>
+                </div>
+            </div>
+    </form>
+    <% block('footer').append('<script src="../js/newProduct.js"></script>') %>

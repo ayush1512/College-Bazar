@@ -69,7 +69,7 @@ router.get('/profile/edit',isLoggedIn,catchAsync(async (req,res)=>{
 }));
 
 router.put('/profile/edit',upload.array('photos'),isLoggedIn,catchAsync(async (req,res)=>{
-    const user = await User.findByIdAndUpdate(req.user._id, { ...req.body });
+    const user = await User.findByIdAndUpdate(req.user._id, { ...req.body.Users });
 
     if (req.files) {
         await cloudinary.uploader.destroy(user.photos['filename'])
