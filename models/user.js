@@ -1,9 +1,13 @@
-const { number } = require("joi");
+const { number, required } = require("joi");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const passportLocalMongoose = require("passport-local-mongoose");
 
 const UserSchema = new Schema({
+  name:{
+    type:String,
+    required: false,
+  },
   email: {
     type: String,
     required: true,
@@ -14,7 +18,7 @@ const UserSchema = new Schema({
     type: Number,
     required: false,
   },
-  address: {
+  bio: {
     type: String,
     required: false,
   },

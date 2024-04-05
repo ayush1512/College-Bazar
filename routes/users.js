@@ -11,6 +11,10 @@ const LocalStrategy = require('passport-local');
 const User = require('../models/user');
 const collegeBazarProducts = require('../models/college-bazar');
 const catchAsync=require('../utils/catchAsync')
+const multer = require('multer');
+const {storage}=require('../cloudinary')
+const upload = multer({ storage });
+const {cloudinary} = require('../cloudinary')
 const {loggedIn, isLoggedIn, isAuthor}=require('../middleware')
 
 // Login page
@@ -61,8 +65,19 @@ router.get('/profile',isLoggedIn,catchAsync(async (req,res,next)=>{
 
 router.get('/profile/edit',isLoggedIn,catchAsync(async (req,res)=>{
     const user=await User.findById(req.user._id);
-    res.render('college-bazar/profleEdit.ejs',{user});
+    res.render('college-bazar/editProfile',{user});
 }));
+
+router.put('/profile/edit',upload.array('photos'),isLoggedIn,catchAsync(async (req,res)=>{
+    const user = await User.findByIdAndUpdate(req.user._id, { ...req.body });
+
+    if (req.files) {
+        await cloudinary.uploader.destroy(user.photos['filename'])
+        user.photos = await req.files.map(f => ({url:f.path , filename:f.filename}))
+    }
+    await user.save();
+    req.flash('success', 'Successfully updated your profile!');
+}))
 
 
 

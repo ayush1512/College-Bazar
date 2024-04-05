@@ -8,8 +8,12 @@
           <!-- left column -->
           <div class="col-md-3 col-sm-12">
             <div class="text-center">
-              <img src="https://png.pngitem.com/pimgs/s/150-1503945_transparent-user-png-default-user-image-png-png.png"
+              <% if(user.photos){ %>
+                <img src="<% user.photos['url']%>" alt="">
+              <% }else{ %>
+                <img src="https://png.pngitem.com/pimgs/s/150-1503945_transparent-user-png-default-user-image-png-png.png"
                 class="avatar img-circle" alt="avatar" style="height: 200px; width: 200px;">
+              <% } %>
               <label for="file" class="custom-file-upload">
                 Upload File
               </label>
@@ -19,13 +23,13 @@
           <div class="form-group">
             <label class="col-md-3 control-label">Name:</label>
             <div class="col-md-8">
-              <input class="form-control" type="text">
+              <input class="form-control" type="text" value="<%= user.name %>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="email">
+              <input class="form-control" type="email" <% user.email %>>
             </div>
           </div>
           <div class="form-group">
@@ -43,17 +47,17 @@
           <div class="form-group">
             <label class="col-md-3 control-label">Phone:</label>
             <div class="col-md-8">
-              <input class="form-control" type="tel">
+              <input class="form-control" type="tel" value="<%= user.phone %>">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Year:</label>
             <div class="col-md-8">
               <select class="form-control">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+                <option <% if(user.year==1){ %> selected <% } %> value="1">1</option>
+                <option <% if(user.year==2){ %> selected <% } %> value="2">2</option>
+                <option <% if(user.year==3){ %> selected <% } %> value="3">3</option>
+                <option <% if(user.year==4){ %> selected <% } %> value="4">4</option>
               </select>
             </div>
           </div>
@@ -61,11 +65,11 @@
             <label class="col-md-3 control-label">Branch:</label>
             <div class="col-md-8">
               <select class="form-control">
-                <option value="IT">IT</option>
-                <option value="EE">EE</option>
-                <option value="EC">EC</option>
-                <option value="ME">ME</option> 
-                <option value="CE">CE</option> 
+                <option <% if(user.branch=="IT"){ %> selected <% } %> value="IT">IT</option>
+                <option <% if(user.branch=="EE"){ %> selected <% } %> value="EE">EE</option>
+                <option <% if(user.branch=="EC"){ %> selected <% } %> value="EC">EC</option>
+                <option <% if(user.branch=="ME"){ %> selected <% } %> value="ME">ME</option> 
+                <option <% if(user.branch=="CE"){ %> selected <% } %> value="CE">CE</option> 
               </select>
             </div>
           </div>
