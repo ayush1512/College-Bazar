@@ -3,7 +3,7 @@
     <div class="container">
       <h1>Edit Profile</h1>
       <hr>
-      <form action="">
+      <form action="/profile/edit?_method=PUT", method="POST" enctype="multipart/form-data">
         <div class="row">
           <!-- left column -->
           <div class="col-md-3 col-sm-12">
@@ -17,19 +17,19 @@
               <label for="file" class="custom-file-upload">
                 Upload File
               </label>
-              <input type="file" id="file" name="photos">
+              <input type="file" accept="image/*" id="file" name="photos" max="1">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Name:</label>
             <div class="col-md-8">
-              <input class="form-control" type="text" value="<%= user.name %>" name="Users[name]">
+              <input class="form-control" type="text" value="<%= user.name %>" name="userDetail[name]">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="email" vlaue='<% user.email %>' name="Users[email]">
+              <input class="form-control" type="email" value="<%= user.email %>" name="userDetail[email]">
             </div>
           </div>
           <!-- <div class="form-group">
@@ -47,13 +47,13 @@
           <div class="form-group">
             <label class="col-md-3 control-label">Phone:</label>
             <div class="col-md-8">
-              <input class="form-control" type="tel" value="<%= user.phone %>" name="Users[phone]">
+              <input class="form-control" type="tel" value="<%= user.phone %>" name="userDetail[phone]">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Year:</label>
             <div class="col-md-8">
-              <select class="form-control" name="Users[year]">
+              <select class="form-control" name="userDetail[year]">
                 <option <% if(user.year==1){ %> selected <% } %> value="1">1</option>
                 <option <% if(user.year==2){ %> selected <% } %> value="2">2</option>
                 <option <% if(user.year==3){ %> selected <% } %> value="3">3</option>
@@ -64,7 +64,7 @@
           <div class="form-group">
             <label class="col-md-3 control-label">Branch:</label>
             <div class="col-md-8">
-              <select class="form-control" name="Users[branch]">
+              <select class="form-control" name="userDetail[branch]">
                 <option <% if(user.branch=="IT"){ %> selected <% } %> value="IT">IT</option>
                 <option <% if(user.branch=="EE"){ %> selected <% } %> value="EE">EE</option>
                 <option <% if(user.branch=="EC"){ %> selected <% } %> value="EC">EC</option>
@@ -76,13 +76,13 @@
           <div class="form-group">
             <label class="col-md-3 control-label">College:</label>
             <div class="col-md-8">
-              <input class="form-control" type="text" value="<%= user.college %>" name="Users[college]">
+              <input class="form-control" type="text" value="<%= user.college %>" name="userDetail[college]">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Bio:</label>
             <div class="col-md-8">
-              <textarea class="form-control" name="Users[bio]"><%= user.bio %></textarea>
+              <textarea class="form-control" name="userDetail[bio]"><%= user.bio %></textarea>
             </div>
           </div>
           <div class="form-group">

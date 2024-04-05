@@ -68,15 +68,17 @@ router.get('/profile/edit',isLoggedIn,catchAsync(async (req,res)=>{
     res.render('college-bazar/profleEdit',{user});
 }));
 
-router.put('/profile/edit',upload.array('photos'),isLoggedIn,catchAsync(async (req,res)=>{
-    const user = await User.findByIdAndUpdate(req.user._id, { ...req.body.Users });
-
-    if (req.files) {
-        await cloudinary.uploader.destroy(user.photos['filename'])
-        user.photos = await req.files.map(f => ({url:f.path , filename:f.filename}))
+router.put('/profile/edit', upload.single('photos'), isLoggedIn, catchAsync(async (req, res) => {
+    const user = await User.findByIdAndUpdate(req.user._id, { ...req.body.userDetail });
+    if(req.file){
+        if(user.photos['filename']){
+            await cloudinary.uploader.destroy(user.photos['filename'])
+        }
+        user.photos =  { url: req.file.path, filename: req.file.filename };
     }
     await user.save();
     req.flash('success', 'Successfully updated your profile!');
+    res.redirect('/profile');
 }))
 
 
