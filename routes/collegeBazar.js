@@ -56,6 +56,9 @@ router.get('/products',catchAsync(async(req,res)=>{
             }));
             const prod = await collegeBazarProducts.find({ $or: searchConditions }).populate('author');
             res.render('college-bazar/productList', { prod });
+        } else {
+            const prod = await collegeBazarProducts.find({ }).populate('author');
+            res.render('college-bazar/productList', { prod });
         }
 }));
 
