@@ -9,14 +9,27 @@ const UserSchema = new Schema({
     required: true,
     unique: true,
   },
-  photos: {
-    type: String,
-    required: false,
-  },
+  photos: {url: String, filename:String},
   phone: {
     type: Number,
     required: false,
   },
+  address: {
+    type: String,
+    required: false,
+  },
+  college: {
+    type: String,
+    required: false,
+  },
+  branch: {
+    type: String,
+    required: false,
+  },
+  year: {
+    type: Number,
+    required: false,
+  }
 });
 
 UserSchema.plugin(passportLocalMongoose);

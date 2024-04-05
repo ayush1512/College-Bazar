@@ -11,7 +11,7 @@ const LocalStrategy = require('passport-local');
 const User = require('../models/user');
 const collegeBazarProducts = require('../models/college-bazar');
 const catchAsync=require('../utils/catchAsync')
-const {loggedIn, isLoggedIn}=require('../middleware')
+const {loggedIn, isLoggedIn, isAuthor}=require('../middleware')
 
 // Login page
 router.get('/login',loggedIn,(req,res)=>{
@@ -58,6 +58,11 @@ router.get('/profile',isLoggedIn,catchAsync(async (req,res,next)=>{
     const product = await collegeBazarProducts.find({ author: user._id })
     res.render('college-bazar/profile',{user,product});
 }))
+
+router.get('/profile/edit',isLoggedIn,catchAsync(async (req,res)=>{
+    const user=await User.findById(req.user._id);
+    res.render('college-bazar/editProfile',{user});
+}));
 
 
 
