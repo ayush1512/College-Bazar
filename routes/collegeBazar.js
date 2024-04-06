@@ -28,7 +28,7 @@ router.get('/',catchAsync( async (req,res)=>{
         const prod = await collegeBazarProducts.find({ category: { $regex: terms } }).populate('author');
         res.render('college-bazar/index', { prod });
     } else {
-        const prod = await collegeBazarProducts.find({ }).populate('author');
+        const prod = await collegeBazarProducts.find({}).populate('author');
         res.render('college-bazar/index', { prod});
     }
 }));

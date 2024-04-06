@@ -53,13 +53,13 @@
         </div><!--/.section-header-->
         <div class="explore-content">
           <div class="row">
-            <% for(let i=0; i<prod.length; i++) {%>
-              <div class=" col-md-4 col-sm-6">
+            <% for(let i=0; i<Math.min(prod.length,6); i++) {%>
+              <div class=" col-md-4 col-sm-6" onclick="window.location.href='/products/<%= prod[i]._id %>'" style="width: 390px; height: 700px;">
                 <div class="single-explore-item">
-                  <div class="single-explore-img">
-                    <img src="<%= prod[i].fileToUpload[0]['url'] %>" alt="explore image">
+                  <div class="single-explore-img" style="width: 350px; height: 350px;">
+                    <img src="<%= prod[i].fileToUpload[0]['url'] %>" alt="explore image" style="width:-webkit-fill-available;">
                     <div class="single-explore-img-info">
-                      <button onclick="window.location.href='/products/<%= prod[i]._id %>'">best rated</button>
+                      <button >best rated</button>
                       <div class="single-explore-image-icon-box">
                         <ul>
                           <li>
@@ -92,7 +92,11 @@
                         <div class="col-sm-2">
                           <div class="explore-person-img">
                             <a href="#">
-                              <img src="<%= prod[i].author.photos['url'] %>" alt="explore person">
+                              <% if(prod[i].author.photos['url']){ %>
+                                <img src="<%= prod[i].author.photos['url'] %>" alt="explore person">
+                              <% }else{ %>
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png" alt="explore person">
+                              <% } %>
                             </a>
                           </div>
                         </div>
@@ -103,20 +107,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="explore-open-close-part">
-                      <div class="row">
-                        <div class="col-sm-5">
-                          <button class="close-btn" onclick="window.location.href='#'">close now</button>
-                        </div>
-                        <div class="col-sm-7">
-                          <div class="explore-map-icon">
-                            <a href="#"><i data-feather="map-pin"></i></a>
-                            <a href="#"><i data-feather="upload"></i></a>
-                            <a href="#"><i data-feather="heart"></i></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
               </div>
