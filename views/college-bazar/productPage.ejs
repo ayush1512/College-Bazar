@@ -58,22 +58,26 @@
                 <i class="fas fa-phone" id="buttonIcon" style="display: none;"></i>
               </a>
             </div>
-            <div class="col-md-4">
-              <button class="custom-btn" id="editButton"
-              style="color: #fff; background-color: black; padding: 10px; border-radius: 5px; transition: all 0.3s ease;" 
-              type="reset" onclick="location.href='/products/<%= prod._id %>/edit'">
-              <span id="editText">Edit</span>
-              <i class="fas fa-pencil-alt" id="editIcon" style="display: none;"></i>
-            </button>
-          </div>
-          <div class="col-md-4">
-            <form action="/products/<%= prod._id %>?_method=DELETE" method="POST" onsubmit="return confirmDelete()">
-              <button class="custom-btn" id="deleteButton" style="color: #fff; background-color: black; padding: 10px; border-radius: 5px; transition: all 0.3s ease;" >
-                <span id="deleteText">Delete</span>
-                <i class="fas fa-trash" id="deleteIcon" style="display: none;"></i>
+            <% if(user) {%>
+              <!-- <h6><%=prod.author._id%>, <%= user._id %></h6> -->
+            <% if( user._id == prod.author._id) {%>
+              <div class="col-md-4">
+                <button class="custom-btn" id="editButton"
+                style="color: #fff; background-color: black; padding: 10px; border-radius: 5px; transition: all 0.3s ease;" 
+                type="reset" onclick="location.href='/products/<%= prod._id %>/edit'">
+                <span id="editText">Edit</span>
+                <i class="fas fa-pencil-alt" id="editIcon" style="display: none;"></i>
               </button>
-            </form>
-          </div>
+            </div>
+            <div class="col-md-4">
+              <form action="/products/<%= prod._id %>?_method=DELETE" method="POST" onsubmit="return confirmDelete()">
+                <button class="custom-btn" id="deleteButton" style="color: #fff; background-color: black; padding: 10px; border-radius: 5px; transition: all 0.3s ease;" >
+                  <span id="deleteText">Delete</span>
+                  <i class="fas fa-trash" id="deleteIcon" style="display: none;"></i>
+                </button>
+              </form>
+            </div>
+            <% }} %>
         </div>
       </div>
          </div>

@@ -93,8 +93,13 @@ router.get('/products',catchAsync(async(req,res)=>{
 
 // Product Detail
 router.get('/products/:id',catchAsync(async(req,res)=>{
+    const u = req.user
+    let user =null
+    if(u){
+         user=await User.findById(u._id)
+    }
     const prod= await collegeBazarProducts.findById(req.params.id).populate('author')
-    res.render('college-bazar/productPage',{prod})
+    res.render('college-bazar/productPage',{prod, user})
 }));
 
 router.get('/products/:id/edit',isLoggedIn,isAuthor, catchAsync(async (req,res,next)=>{
