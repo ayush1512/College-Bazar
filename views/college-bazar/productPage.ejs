@@ -52,15 +52,15 @@
          </div>
          <div clas s="buttons">
           <div class="row">
+            <% if(!(user && user._id.toString() === prod.author._id.toString())) {%>
             <div class="col-md-4">
               <a class="custom-btn call" id="contactButton" href='https://wa.me/+91<%= prod.phone %>'>
                 <span id="buttonText">Contact</span>
                 <i class="fas fa-phone" id="buttonIcon" style="display: none;"></i>
               </a>
             </div>
-            <% if(user) {%>
-              <!-- <h6><%=prod.author._id%>, <%= user._id %></h6> -->
-            <% if( user._id == prod.author._id) {%>
+            <% } %>
+            <% if(user && user._id.toString() === prod.author._id.toString()) {%>
               <div class="col-md-4">
                 <button class="custom-btn" id="editButton"
                 style="color: #fff; background-color: black; padding: 10px; border-radius: 5px; transition: all 0.3s ease;" 
@@ -77,7 +77,7 @@
                 </button>
               </form>
             </div>
-            <% }} %>
+            <% } %>
         </div>
       </div>
          </div>
