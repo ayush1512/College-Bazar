@@ -14,12 +14,24 @@ const upload = multer({ storage });
 const catchAsync=require('../utils/catchAsync')
 const natural = require('natural');
 const tokenizer = new natural.WordTokenizer();
+const spellcheck = new natural.Spellcheck();
 
 
 // Home Page
-router.get('/',(req,res)=>{
-    res.render('college-bazar/index')
-});
+router.get('/',catchAsync( async (req,res)=>{
+    let query = req.query.q;
+
+    if (query) {
+        query = query.toLowerCase();
+
+        const terms = new RegExp(query, 'i');
+        const prod = await collegeBazarProducts.find({ category: { $regex: terms } }).populate('author');
+        res.render('college-bazar/index', { prod });
+    } else {
+        const prod = await collegeBazarProducts.find({ }).populate('author');
+        res.render('college-bazar/index', { prod});
+    }
+}));
 
 // New Product to add page
 router.get('/newProduct', isLoggedIn,(req,res)=>{
@@ -43,7 +55,6 @@ router.post('/products', upload.array('fileToUpload', 4), isLoggedIn, catchAsync
 // Function to correct spelling
 function correctSpelling(query) {
     const tokens = tokenizer.tokenize(query);
-    const spellcheck = new natural.Spellcheck();
     const correctedTokens = tokens.map(token => spellcheck.getCorrections(token, 1)[0] || token);
     return correctedTokens.join(' ');
 }

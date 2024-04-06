@@ -5,23 +5,21 @@
       <div class="container">
         <div id="categories" class="list-topics-content">
           <ul>
-            <li class="list-item">
-              <div class="single-list-topics-content">
-                <div class="single-list-topics-icon image-container">
-                  <img src="/img/stationery.png" alt="" style="width: 50px; height: 50px;">
-                </div>
-                <h2 class="item-text"><a href="#">Stationery</a></h2>
+            <li onclick="window.location.href='/?q=stationery#explore'">
+              <div class="single-list-topics-content" id="Stationery">
+                <h2>Stationery</h2>
               </div>
             </li>
-            <li class="list-item">
+            <li onclick="window.location.href='/?q=books#explore'">
               <div class="single-list-topics-content">
                 <div class="single-list-topics-icon image-container">
                   <img src="/img/books.png" alt="" style="width: 50px; height: 50px;">
                 </div>
-                <h2 class="item-text"><a href="#">Books</a></h2>
+                <h2>Books</h2>
+
               </div>
             </li>
-            <li class="list-item">
+            <li onclick="window.location.href='/?q=utilities#explore'">
               <div class="single-list-topics-content">
                 <div class="single-list-topics-icon image-container">
                   <img src="/img/utilities.png" alt="" style="width: 50px; height: 50px;">
@@ -29,7 +27,7 @@
                 <h2 class="item-text"><a href="#">Utilities</a></h2>
               </div>
             </li>
-            <li class="list-item">
+            <li onclick="window.location.href='/?q=services#explore'">
               <div class="single-list-topics-content">
                 <div class="single-list-topics-icon image-container">
                   <img src="/img/services.png" alt="" style="width: 50px; height: 50px;">
@@ -53,408 +51,74 @@
         </div><!--/.section-header-->
         <div class="explore-content">
           <div class="row">
-            <div class=" col-md-4 col-sm-6">
-              <div class="single-explore-item">
-                <div class="single-explore-img">
-                  <img src="../images/explore/e1.jpg" alt="explore image">
-                  <div class="single-explore-img-info">
-                    <button onclick="window.location.href='#'">best rated</button>
-                    <div class="single-explore-image-icon-box">
-                      <ul>
-                        <li>
-                          <div class="single-explore-image-icon">
-                            <i class="fa fa-arrows-alt"></i>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="single-explore-image-icon">
-                            <i class="fa fa-bookmark-o"></i>
-                          </div>
-                        </li>
-                      </ul>
+            <% for(let i=0; i<prod.length; i++) {%>
+              <div class=" col-md-4 col-sm-6">
+                <div class="single-explore-item">
+                  <div class="single-explore-img">
+                    <img src="<%= prod[i].fileToUpload[0]['url'] %>" alt="explore image">
+                    <div class="single-explore-img-info">
+                      <button onclick="window.location.href='/products/<%= prod[i]._id %>'">best rated</button>
+                      <div class="single-explore-image-icon-box">
+                        <ul>
+                          <li>
+                            <div class="single-explore-image-icon">
+                              <i class="fa fa-arrows-alt"></i>
+                            </div>
+                          </li>
+                          <li>
+                            <div class="single-explore-image-icon">
+                              <i class="fa fa-bookmark-o"></i>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="single-explore-txt bg-theme-1">
-                  <h2><a href="#">Drafter</a></h2>
-                  <p class="explore-rating-price">
-                    <span class="explore-rating">5.0</span>
-                    <a href="#"> 10 ratings</a>
-                    <span class="explore-price-box">
-                      From
-                      <span class="explore-price">Rs.140</span>
-                    </span>
-                    <a href="#">Stationery</a>
-                  </p>
-                  <div class="explore-person">
-                    <div class="row">
-                      <div class="col-sm-2">
-                        <div class="explore-person-img">
-                          <a href="#">
-                            <img src="../images/explore/person.png" alt="explore person">
-                          </a>
+                  <div class="single-explore-txt bg-theme-1">
+                    <h2><a href="#"><%= prod[i].title %></a></h2>
+                    <p class="explore-rating-price">
+                      <span class="explore-rating">5.0</span>
+                      <a href="#"> 10 ratings</a>
+                      <span class="explore-price-box">
+                        From
+                        <span class="explore-price">Rs.<%= prod[i].price %></span>
+                      </span>
+                      <a href="#"><%= prod[i].categories %></a>
+                    </p>
+                    <div class="explore-person">
+                      <div class="row">
+                        <div class="col-sm-2">
+                          <div class="explore-person-img">
+                            <a href="#">
+                              <img src="<%= prod[i].author.photos['url'] %>" alt="explore person">
+                            </a>
+                          </div>
                         </div>
-                      </div>
-                      <div class="col-sm-10">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut
-                          labore et dolore magna aliqua....
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="explore-open-close-part">
-                    <div class="row">
-                      <div class="col-sm-5">
-                        <button class="close-btn" onclick="window.location.href='#'">close now</button>
-                      </div>
-                      <div class="col-sm-7">
-                        <div class="explore-map-icon">
-                          <a href="#"><i data-feather="map-pin"></i></a>
-                          <a href="#"><i data-feather="upload"></i></a>
-                          <a href="#"><i data-feather="heart"></i></a>
+                        <div class="col-sm-10">
+                          <p>
+                            <%= prod[i].description %>
+                          </p>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="single-explore-item">
-                <div class="single-explore-img">
-                  <img src="../images/explore/e2.jpg" alt="explore image">
-                  <div class="single-explore-img-info">
-                    <button onclick="window.location.href='#'">featured</button>
-                    <div class="single-explore-image-icon-box">
-                      <ul>
-                        <li>
-                          <div class="single-explore-image-icon">
-                            <i class="fa fa-arrows-alt"></i>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="single-explore-image-icon">
-                            <i class="fa fa-bookmark-o"></i>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-explore-txt bg-theme-2">
-                  <h2><a href="#">Roller Scale</a></h2>
-                  <p class="explore-rating-price">
-                    <span class="explore-rating">4.5</span>
-                    <a href="#"> 8 ratings</a>
-                    <span class="explore-price-box">
-                      From
-                      <span class="explore-price">Rs. 100</span>
-                    </span>
-                    <a href="#">Stationery</a>
-                  </p>
-                  <div class="explore-person">
-                    <div class="row">
-                      <div class="col-sm-2">
-                        <div class="explore-person-img">
-                          <a href="#">
-                            <img src="../images/explore/person.png" alt="explore person">
-                          </a>
+                    <div class="explore-open-close-part">
+                      <div class="row">
+                        <div class="col-sm-5">
+                          <button class="close-btn" onclick="window.location.href='#'">close now</button>
                         </div>
-                      </div>
-                      <div class="col-sm-10">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut
-                          labore et dolore magna aliqua....
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="explore-open-close-part">
-                    <div class="row">
-                      <div class="col-sm-5">
-                        <button class="close-btn open-btn" onclick="window.location.href='#'">open now</button>
-                      </div>
-                      <div class="col-sm-7">
-                        <div class="explore-map-icon">
-                          <a href="#"><i data-feather="map-pin"></i></a>
-                          <a href="#"><i data-feather="upload"></i></a>
-                          <a href="#"><i data-feather="heart"></i></a>
+                        <div class="col-sm-7">
+                          <div class="explore-map-icon">
+                            <a href="#"><i data-feather="map-pin"></i></a>
+                            <a href="#"><i data-feather="upload"></i></a>
+                            <a href="#"><i data-feather="heart"></i></a>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="single-explore-item">
-                <div class="single-explore-img">
-                  <img src="../images/explore/e3.jpg" alt="explore image">
-                  <div class="single-explore-img-info">
-                    <button onclick="window.location.href='#'">best rated</button>
-                    <div class="single-explore-image-icon-box">
-                      <ul>
-                        <li>
-                          <div class="single-explore-image-icon">
-                            <i class="fa fa-arrows-alt"></i>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="single-explore-image-icon">
-                            <i class="fa fa-bookmark-o"></i>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-explore-txt bg-theme-3">
-                  <h2><a href="#">Mathematics-3 Shivani</a></h2>
-                  <p class="explore-rating-price">
-                    <span class="explore-rating">5.0</span>
-                    <a href="#"> 15 ratings</a>
-                    <span class="explore-price-box">
-                      From
-                      <span class="explore-price">Rs.90</span>
-                    </span>
-                    <a href="#">Books</a>
-                  </p>
-                  <div class="explore-person">
-                    <div class="row">
-                      <div class="col-sm-2">
-                        <div class="explore-person-img">
-                          <a href="#">
-                            <img src="../images/explore/person.png" alt="explore person">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-sm-10">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut
-                          labore et dolore magna aliqua....
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="explore-open-close-part">
-                    <div class="row">
-                      <div class="col-sm-5">
-                        <button class="close-btn" onclick="window.location.href='#'">close now</button>
-                      </div>
-                      <div class="col-sm-7">
-                        <div class="explore-map-icon">
-                          <a href="#"><i data-feather="map-pin"></i></a>
-                          <a href="#"><i data-feather="upload"></i></a>
-                          <a href="#"><i data-feather="heart"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class=" col-md-4 col-sm-6">
-              <div class="single-explore-item">
-                <div class="single-explore-img">
-                  <img src="../images/explore/e4.jpg" alt="explore image">
-                  <div class="single-explore-img-info">
-                    <button onclick="window.location.href='#'">most view</button>
-                    <div class="single-explore-image-icon-box">
-                      <ul>
-                        <li>
-                          <div class="single-explore-image-icon">
-                            <i class="fa fa-arrows-alt"></i>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="single-explore-image-icon">
-                            <i class="fa fa-bookmark-o"></i>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-explore-txt bg-theme-4">
-                  <h2><a href="#">Single Folding Bed</a></h2>
-                  <p class="explore-rating-price">
-                    <span class="explore-rating">5.0</span>
-                    <a href="#"> 10 ratings</a>
-                    <span class="explore-price-box">
-                      From
-                      <span class="explore-price">Rs.2000</span>
-                    </span>
-                    <a href="#">Utilities</a>
-                  </p>
-                  <div class="explore-person">
-                    <div class="row">
-                      <div class="col-sm-2">
-                        <div class="explore-person-img">
-                          <a href="#">
-                            <img src="../images/explore/person.png" alt="explore person">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-sm-10">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut
-                          labore et dolore magna aliqua....
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="explore-open-close-part">
-                    <div class="row">
-                      <div class="col-sm-5">
-                        <button class="close-btn" onclick="window.location.href='#'">close now</button>
-                      </div>
-                      <div class="col-sm-7">
-                        <div class="explore-map-icon">
-                          <a href="#"><i data-feather="map-pin"></i></a>
-                          <a href="#"><i data-feather="upload"></i></a>
-                          <a href="#"><i data-feather="heart"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="single-explore-item">
-                <div class="single-explore-img">
-                  <img src="../images/explore/e5.jpg" alt="explore image">
-                  <div class="single-explore-img-info">
-                    <button onclick="window.location.href='#'">featured</button>
-                    <div class="single-explore-image-icon-box">
-                      <ul>
-                        <li>
-                          <div class="single-explore-image-icon">
-                            <i class="fa fa-arrows-alt"></i>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="single-explore-image-icon">
-                            <i class="fa fa-bookmark-o"></i>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-explore-txt bg-theme-2">
-                  <h2><a href="#">3-Speed Cooler</a></h2>
-                  <p class="explore-rating-price">
-                    <span class="explore-rating">4.2</span>
-                    <a href="#"> 8 ratings</a>
-                    <span class="explore-price-box">
-                      From
-                      <span class="explore-price">Rs.2000</span>
-                    </span>
-                    <a href="#">Utilities</a>
-                  </p>
-                  <div class="explore-person">
-                    <div class="row">
-                      <div class="col-sm-2">
-                        <div class="explore-person-img">
-                          <a href="#">
-                            <img src="../images/explore/person.png" alt="explore person">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-sm-10">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut
-                          labore et dolore magna aliqua....
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="explore-open-close-part">
-                    <div class="row">
-                      <div class="col-sm-5">
-                        <button class="close-btn open-btn" onclick="window.location.href='#'">open now</button>
-                      </div>
-                      <div class="col-sm-7">
-                        <div class="explore-map-icon">
-                          <a href="#"><i data-feather="map-pin"></i></a>
-                          <a href="#"><i data-feather="upload"></i></a>
-                          <a href="#"><i data-feather="heart"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 col-sm-6">
-              <div class="single-explore-item">
-                <div class="single-explore-img">
-                  <img src="../images/explore/e6.jpg" alt="explore image">
-                  <div class="single-explore-img-info">
-                    <button onclick="window.location.href='#'">best rated</button>
-                    <div class="single-explore-image-icon-box">
-                      <ul>
-                        <li>
-                          <div class="single-explore-image-icon">
-                            <i class="fa fa-arrows-alt"></i>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="single-explore-image-icon">
-                            <i class="fa fa-bookmark-o"></i>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="single-explore-txt bg-theme-5">
-                  <h2><a href="#">Engineering Mathematics B.S. Grewal</a></h2>
-                  <p class="explore-rating-price">
-                    <span class="explore-rating">5.0</span>
-                    <a href="#"> 15 ratings</a>
-                    <span class="explore-price-box">
-                      From
-                      <span class="explore-price">Rs.400</span>
-                    </span>
-                    <a href="#">Books</a>
-                  </p>
-                  <div class="explore-person">
-                    <div class="row">
-                      <div class="col-sm-2">
-                        <div class="explore-person-img">
-                          <a href="#">
-                            <img src="../images/explore/person.png" alt="explore person">
-                          </a>
-                        </div>
-                      </div>
-                      <div class="col-sm-10">
-                        <p>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incid ut
-                          labore et dolore magna aliqua....
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="explore-open-close-part">
-                    <div class="row">
-                      <div class="col-sm-5">
-                        <button class="close-btn" onclick="window.location.href='#'">close now</button>
-                      </div>
-                      <div class="col-sm-7">
-                        <div class="explore-map-icon">
-                          <a href="#"><i data-feather="map-pin"></i></a>
-                          <a href="#"><i data-feather="upload"></i></a>
-                          <a href="#"><i data-feather="heart"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <% } %>
           </div>
         </div>
       </div><!--/.container-->
