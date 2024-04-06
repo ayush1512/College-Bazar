@@ -12,6 +12,8 @@ const multer = require('multer');
 const {storage}=require('../cloudinary')
 const upload = multer({ storage });
 const catchAsync=require('../utils/catchAsync')
+const natural = require('natural');
+const tokenizer = new natural.WordTokenizer();
 
 
 // Home Page
@@ -38,28 +40,43 @@ router.post('/products', upload.array('fileToUpload', 4), isLoggedIn, catchAsync
     res.redirect(`/profile`);
 }));
 
+// Function to correct spelling
+function correctSpelling(query) {
+    const tokens = tokenizer.tokenize(query);
+    const spellcheck = new natural.Spellcheck();
+    const correctedTokens = tokens.map(token => spellcheck.getCorrections(token, 1)[0] || token);
+    return correctedTokens.join(' ');
+}
 
 // Product list
 router.get('/products',catchAsync(async(req,res)=>{
     let query = req.query.q;
-        if (query) {
-            query = query.toLowerCase(); // Convert the search query to lowercase
-            const terms = query.split(' ').map(term => new RegExp(term, 'i'));
-            const searchConditions = terms.map(term => ({
-                $or: [
-                    { category: { $regex: term } },
-                    { brand: { $regex: term } },
-                    { title: { $regex: term } },
-                    { description: { $regex: term } },
-                    { location: { $regex: term } }
-                ]
-            }));
-            const prod = await collegeBazarProducts.find({ $or: searchConditions }).populate('author');
-            res.render('college-bazar/productList', { prod });
-        } else {
-            const prod = await collegeBazarProducts.find({ }).populate('author');
-            res.render('college-bazar/productList', { prod });
+    let suggestedQuery = null;
+
+
+    if (query) {
+        query = query.toLowerCase();
+        const correctedQuery = correctSpelling(query);
+        if (correctedQuery !== query) {
+            suggestedQuery = correctedQuery;
         }
+
+        const terms = correctedQuery.split(' ').map(term => new RegExp(term, 'i'));
+        const searchConditions = terms.map(term => ({
+            $or: [
+                { category: { $regex: term } },
+                { brand: { $regex: term } },
+                { title: { $regex: term } },
+                { description: { $regex: term } },
+                { location: { $regex: term } }
+            ]
+        }));
+        const prod = await collegeBazarProducts.find({ $or: searchConditions }).populate('author');
+        res.render('college-bazar/productList', { prod,suggestedQuery });
+    } else {
+        const prod = await collegeBazarProducts.find({ }).populate('author');
+        res.render('college-bazar/productList', { prod,suggestedQuery });
+    }
 }));
 
 

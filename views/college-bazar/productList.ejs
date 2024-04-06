@@ -2,9 +2,9 @@
 <% block('head').append('<link rel="stylesheet" href="../css/productList.css">') %>
 <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,800" rel='stylesheet' type='text/css'>
 <div class="tools">
-  <div class="search-area">
-    <input type="text" id="search" placeholder="Search" /> <button id="searchbutton">Go</button>
-  </div>
+  <% if (suggestedQuery) { %>
+    <p>Did you mean: <%= suggestedQuery %></p>
+  <% } %>
   <div class="settings">
     <button id="view">Switch View</button>
   </div>
