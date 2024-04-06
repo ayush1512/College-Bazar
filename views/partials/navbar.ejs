@@ -2,47 +2,65 @@
 <section class="top-area">
   <div class="header-area">
     <!-- Start Navigation -->
-      <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+    <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy" data-minus-value-desktop="70"
+      data-minus-value-mobile="55" data-speed="1000">
 
-          <div class="container">
+      <div class="container">
 
-              <!-- Start Header Navigation -->
-              <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                      <i class="fa fa-bars"></i>
-                  </button>
-                  <a class="navbar-brand" href="/"><img src="/img/Logos/CB_Light.svg" alt="" width="30" style="margin-right: 20px;">  College<span>Bazar2.0</span></a>
+        <!-- Start Header Navigation -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+            <i class="fa fa-bars"></i>
+          </button>
+          <a class="navbar-brand" href="/"><img src="/img/Logos/CB_Light.svg" alt="" width="30"
+              style="margin-right: 20px;"> College<span>Bazar2.0</span></a>
 
-              </div><!--/.navbar-header-->
-              <!-- End Header Navigation -->
+        </div><!--/.navbar-header-->
+        <!-- End Header Navigation -->
 
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-                  <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-                    <!-- Add search bar here -->
-                    <li>
-                      <form class="navbar-form" role="search" action="/products" method="GET" style="background: unset;">
-                        <div class="input-group">
-                          <input type="text" class="form-control" placeholder="SEARCH" name="q" style="border-radius: 65px 65px; text-align: center; border: 2px solid black;">
-                        </div>
-                      </form>
-                    </li>
-                      <li ><a href="/products">Products</a></li>
-                      <li><a href="/contactUs">contact</a></li>
-                      <li><a href="/aboutUs">About Us</a></li>
-                      <% if(!currentUser){ %>
-                      <li><a href="/login" >login</a></li>
-                      <% }else{ %>
-                        <li><a href="/profile">Profile</a></li>
-                      <% } %>
-                      <li id="button"><a href="/newProduct">Post</a></li>
-                  </ul><!--/.nav -->
-              </div><!-- /.navbar-collapse -->
-          </div><!--/.container-->
-      </nav><!--/nav-->
-      <!-- End Navigation -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+          <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+            <!-- Add search bar here -->
+            <li>
+              <form class="navbar-form" role="search" action="/products" method="GET" style="background: unset;">
+                <div class="input-group" style="border: 2px solid black; border-radius: 65px;">
+                  <!-- <span style="display: flex;
+                  flex-wrap: nowrap;
+                  flex-direction: row;
+                  align-items: center;">
+                    <input type="text" class="form-control" placeholder="SEARCH" name="q"
+                      style="border-radius: 65px 65px; text-align: center; border: 2px solid black;">
+                    <button style="    height: 2.5rem;
+                            border: unset;
+                            margin: unset;
+                            padding-left: 0px;
+                      " class="searchbtn"><img src="/img/search.png" alt="" style="margin: unset;"></button>
+                  </span> -->
+                    <input type="text" class="form-control" placeholder="SEARCH" name="q" style="border-radius: 65px 0px 0px 65px; margin-top: 0px; border-right: 0px;">
+                    <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit" style="border-radius: 0px 65px 65px 0px; margin: 0px;
+                      height: fit-content;border-left: 0px;"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </form>
+            </li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/contactUs">contact</a></li>
+            <li><a href="/aboutUs">About Us</a></li>
+            <% if(!currentUser){ %>
+              <li><a href="/login">login</a></li>
+              <% }else{ %>
+                <li><a href="/profile">Profile</a></li>
+                <% } %>
+                  <li id="button"><a href="/newProduct">Post</a></li>
+          </ul><!--/.nav -->
+        </div><!-- /.navbar-collapse -->
+      </div><!--/.container-->
+    </nav><!--/nav-->
+    <!-- End Navigation -->
   </div><!--/.header-area-->
-    <div class="clearfix"></div>
+  <div class="clearfix"></div>
 
 </section><!-- /.top-area-->
 <!-- top-area End -->

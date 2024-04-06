@@ -5,35 +5,36 @@
       <div class="container">
         <div id="categories" class="list-topics-content">
           <ul>
-            <li>
-              <div class="single-list-topics-content" id="Stationery">
-                <h2><a href="#">Stationery</a></h2>
+            <li class="list-item">
+              <div class="single-list-topics-content">
+                <div class="single-list-topics-icon image-container">
+                  <img src="/img/stationery.png" alt="" style="width: 50px; height: 50px;">
+                </div>
+                <h2 class="item-text"><a href="#">Stationery</a></h2>
               </div>
             </li>
-            <li>
+            <li class="list-item">
               <div class="single-list-topics-content">
-                <div class="single-list-topics-icon">
-                  <i class="flaticon-travel"></i>
+                <div class="single-list-topics-icon image-container">
+                  <img src="/img/books.png" alt="" style="width: 50px; height: 50px;">
                 </div>
-                <h2><a href="#">Books</a></h2>
-
+                <h2 class="item-text"><a href="#">Books</a></h2>
               </div>
             </li>
-            <li>
+            <li class="list-item">
               <div class="single-list-topics-content">
-                <div class="single-list-topics-icon">
-                  <i class="flaticon-building"></i>
+                <div class="single-list-topics-icon image-container">
+                  <img src="/img/utilities.png" alt="" style="width: 50px; height: 50px;">
                 </div>
-                <h2><a href="#">Utilities</a></h2>
+                <h2 class="item-text"><a href="#">Utilities</a></h2>
               </div>
             </li>
-            <li>
+            <li class="list-item">
               <div class="single-list-topics-content">
-                <div class="single-list-topics-icon">
-                  <i class="flaticon-pills"></i>
+                <div class="single-list-topics-icon image-container">
+                  <img src="/img/services.png" alt="" style="width: 50px; height: 50px;">
                 </div>
-                <h2><a href="#">Services</a></h2>
-
+                <h2 class="item-text"><a href="#">Services</a></h2>
               </div>
             </li>
           </ul>
@@ -497,11 +498,17 @@
     <!--Custom JS-->
     <script src="../js/custom.js"></script>
 
-    <script>// JavaScript function that adds and removes the 'hovered' class
-      document.getElementById('Stationery').addEventListener('mouseover', function() {
-        this.classList.add('hovered');
-      });
+    <script>const listItems = document.querySelectorAll('.list-item');
+
+      listItems.forEach(item => {
+        const text = item.querySelector('.item-text');
+        const imageContainer = item.querySelector('.image-container');
       
-      document.getElementById('Stationery').addEventListener('mouseout', function() {
-        this.classList.remove('hovered');
-      });</script>
+        item.addEventListener('mouseover', function() {
+          text.style.display = 'none';
+        });
+      
+        item.addEventListener('mouseout', function() {
+          text.style.display = 'block';
+        });
+      });;</script>
