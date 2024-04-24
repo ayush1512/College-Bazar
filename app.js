@@ -15,9 +15,11 @@ const ExpressError = require("./utils/ExpressError");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user");
+const ngrok = require("ngrok");
 
 const userRoutes = require("./routes/users");
 const collegeBazarRoutes = require("./routes/collegeBazar");
+ngrok.authtoken('2fSx42pukl850i20ZI59NQtPKAH_5ndCm1d6Ls2n4GZQG2CQ5');
 
 // conecting server
 mongoose
@@ -28,9 +30,13 @@ mongoose
   .then(async () => {
     console.log("MONGO open");
     // listening app that it is running
-    app.listen(process.env.PORT, () => {
-      console.log("listening 3000");
+    const server = app.listen(process.env.PORT, () => {
+      console.log(`listening ${process.env.PORT}`);
     });
+  
+    // Connect ngrok tunnel
+    let url = await ngrok.connect(process.env.PORT);
+    console.log(`ngrok tunnel set up at url: ${url}`);
   });
 
 app.engine("ejs", ejsMate);

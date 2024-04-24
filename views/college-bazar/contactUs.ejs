@@ -1,48 +1,49 @@
 <%- layout('layouts/boilearplate') %>
-<% block('head').append('<link rel="stylesheet" href="../css/contactUs.css">') %>
-<div class="contactUsCard">
-    <h2>Contact Us</h2>
-    <form style="width: 80%;">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name.." style="width: 100%;">
+    <% block('head').append('<link rel="stylesheet" href="../css/contactUs.css">') %>
+        <div class="contactUsCard">
+            <h2>Contact Us</h2>
+            <form style="width: 80%;">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name.." style="width: 100%;">
 
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email" placeholder="Your email.." style="width: 100%;">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Your email.." style="width: 100%;">
 
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Write something.."
-            style="width: 100%; height: 150px;"></textarea>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write something.."
+                    style="width: 100%; height: 150px;"></textarea>
 
-        <input type="submit" value="Submit"
-            style="background-color: darkcyan; color: white; font-weight: bold; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-    </form>
-</div>
-<div class="contactUsCard">
-    <h2>Location</h2>
-    <p>Indira Gandhi Engineering College, Sagar, 470021</p>
-</div>
-<div class="contactUsCard">
-    <h2>Phone Number</h2>
-    <p>9109689815, 9752296914</p>
-</div>
-<div class="contactUsCard">
-    <h2>Email</h2>
-    <p>ayushsaxena1512@gmail.com</p>
-</div>
-<script>
-    const form = document.querySelector('form');
-    const nameInput = document.querySelector('#name');
-    const emailInput = document.querySelector('#email');
-    const messageInput = document.querySelector('#message');
+                <input type="submit" value="Submit"
+                    style="background-color: darkcyan; color: white; font-weight: bold; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+            </form>
+        </div>
+        <div class="contactUsCard">
+            <h2>Location</h2>
+            <p>Indira Gandhi Engineering College, Sagar, 470021</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.5623151007503!2d78.81477167472663!3d23.869671084188152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3978d1c981eeed05%3A0x9dcd43dc9133a52a!2sIndira%20Gandhi%20Engineering%20College!5e0!3m2!1sen!2sin!4v1713964326798!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="contactUsCard" onclick="window.location.href='tel:+919109689815'">
+            <h2>Phone Number</h2>
+            <p>9109689815</p>
+        </div>
+        <div class="contactUsCard" onclick="window.location.href='mailto:ayushsaxena1512@gmail.com'">
+            <h2>Email</h2>
+            <p>ayushsaxena1512@gmail.com</p>
+        </div>
+        <script>
+            const form = document.querySelector('form');
+            const nameInput = document.querySelector('#name');
+            const emailInput = document.querySelector('#email');
+            const messageInput = document.querySelector('#message');
 
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const formData = new FormData(form);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const message = formData.get('message');
-        console.log(name, email, message);
-        form.reset();
-        alert('Thank you for your message!');
-    });
-</script>
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const formData = new FormData(form);
+                const name = formData.get('name');
+                const email = formData.get('email');
+                const message = formData.get('message');
+                console.log(name, email, message);
+                form.reset();
+                alert('Thank you for your message!');
+            });
+        </script>
