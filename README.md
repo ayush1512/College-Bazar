@@ -10,13 +10,13 @@ This is a web development project, a classifieds website functioning as a platfo
 ## Setup
 - Clone the project locally.
 
-Using CLI
-  ```bash
-  gh repo clone ayush1512/College-Bazar
-  ```
-OR
-
-Download the .zip file and extract.
+> Using CLI
+>  ```bash
+>  gh repo clone ayush1512/College-Bazar
+>  ```
+> OR
+>
+> Download the .zip file and extract.
 
 - Open terminal.
   ```bash
