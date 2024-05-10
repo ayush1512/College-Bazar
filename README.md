@@ -70,5 +70,5 @@ The Products page can be switched into two views grid and list view.
 
 [![Ayush Saxena](https://avatars.githubusercontent.com/u/114080295?v=4)](https://github.com/ayush1512)  | [![Piyush Dwivedi](https://avatars.githubusercontent.com/u/116154729?v=4)](https://github.com/piyushd512)
 ---|---
-[Ayush Saxena_](https://github.com/ayush1512) |[Piyush Dwivedi](https://github.com/piyushd512)
+[Ayush Saxena](https://github.com/ayush1512) |[Piyush Dwivedi](https://github.com/piyushd512)
 
