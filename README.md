@@ -1,27 +1,21 @@
-# ![WebApp](https://iharsh234.github.io/WebApp/images/demo/demo_landing.JPG)
 # CollegeBazar
 <table>
 <tr>
 <td>
-  A webapp using Quandl API to display history of stock growth in a given period of time. It helps predict the growth of stocks from the  charts of stock performace in any period of time. It helps to judge stocks, with the principle of momentum investing, which returns 1% per month on average.
+This is a web development project, a classifieds website functioning as a platform for the college students to buy and sell used items.
 </td>
 </tr>
 </table>
 
-
-## Demo
-Here is a working live demo :  https://iharsh234.github.io/WebApp/
-
-
 ## Site
 
 ### Landing Page
-Currently it is working on all NSE (India) Stocks, BSE (India) Stocks Symbol will be added soon.
+Currently its working on pre-loaded set of data created by us. 
 
-![](https://iharsh234.github.io/WebApp/images/demo/web_app_face.JPG)
+![](https://github.com/ayush1512/College-Bazar/blob/main/Pages/Screenshots/LandingPage.png)
 
-### Query Filled Form
-![](https://iharsh234.github.io/WebApp/images/demo/demo_query.JPG)
+### Login Page
+![](https://github.com/ayush1512/College-Bazar/blob/main/Pages/Screenshots/LoginPage.jpeg)
 
 ### Charts
 ![](https://iharsh234.github.io/WebApp/images/demo/demo_chart1.JPG)
