@@ -7,6 +7,32 @@ This is a web development project, a classifieds website functioning as a platfo
 </tr>
 </table>
 
+## Setup
+- Clone the project locally.
+
+Using CLI
+  ```bash
+  gh repo clone ayush1512/College-Bazar
+  ```
+OR
+
+Download the .zip file and extract.
+
+- Open terminal.
+  ```bash
+  cd ../College-Bazar
+  ```
+
+- Using npm.
+  ```bash
+  npm i
+  ```
+
+- Using node.
+  ```bash
+  node app.js
+  ```
+  
 ## Site
 
 ### Landing Page
@@ -35,7 +61,7 @@ The Products page can be switched into two views grid and list view.
 ![](https://github.com/ayush1512/College-Bazar/blob/main/Pages/Screenshots/PostPage.jpeg)
 
 ### Profile Page
-![](https://github.com/ayush1512/College-Bazar/blob/main/Pages/Screenshots/ProfilePage.jpeg)
+![](https://github.com/ayush1512/College-Bazar/blob/main/Pages/Screenshots/ProfilePage.png)
 
 ## To-do
 - Update the Frontend to a user-friendly user interface.
