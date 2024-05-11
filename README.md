@@ -73,7 +73,7 @@ The Products page can be switched into two views grid and list view.
 ![](https://github.com/ayush1512/College-Bazar/blob/main/Pages/Screenshots/ProfilePage.png)
 
 ## To-do
-- Update the Frontend to a user-friendly user interface.
+- Update the Frontend to a user-friendly interface.
 
 ## Team
 
