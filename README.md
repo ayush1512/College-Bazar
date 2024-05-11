@@ -7,6 +7,15 @@ This is a web development project, a classifieds website functioning as a platfo
 </tr>
 </table>
 
+## Pre-requisites
+- Configure .env
+- Cloudinary Account Setup
+- Mongo Atlas URL
+
+> OR
+
+- Create an issue requesting us the credentials.
+
 ## Setup
 - Clone the project locally.
 
