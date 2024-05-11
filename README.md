@@ -8,24 +8,24 @@ This is a web development project, a classifieds website functioning as a platfo
 </table>
 
 ## Pre-requisites
-- Configure .env
-- Cloudinary Account Setup
-- Mongo Atlas URL
-
-> OR
-
-- Create an issue requesting us the credentials.
+> - Configure .env
+> - Cloudinary Account Setup
+> - Mongo Atlas URL
+>
+>   OR
+>
+> - Create an issue requesting us the credentials.
 
 ## Setup
 - Clone the project locally.
 
-> Using CLI
->  ```bash
->  gh repo clone ayush1512/College-Bazar
->  ```
-> OR
+>   Using GitHub CLI
+>    ```bash
+>    gh repo clone ayush1512/College-Bazar
+>    ```
+>   OR
 >
-> Download the .zip file and extract.
+>   Download the .zip file and extract.
 
 - Open terminal.
   ```bash
