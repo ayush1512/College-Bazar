@@ -4,6 +4,7 @@
   "description": "<<<<<<< HEAD\r  This is a web development project, an ecommerce website functioning as a platform for the college students.\r >",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
