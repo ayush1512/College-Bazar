@@ -19,7 +19,7 @@ const ngrok = require("ngrok");
 
 const userRoutes = require("./routes/users");
 const collegeBazarRoutes = require("./routes/collegeBazar");
-ngrok.authtoken('2fSx42pukl850i20ZI59NQtPKAH_5ndCm1d6Ls2n4GZQG2CQ5');
+// ngrok.authtoken('2fSx42pukl850i20ZI59NQtPKAH_5ndCm1d6Ls2n4GZQG2CQ5');
 
 // conecting server
 mongoose
@@ -33,10 +33,6 @@ mongoose
     const server = app.listen(process.env.PORT, () => {
       console.log(`listening ${process.env.PORT}`);
     });
-  
-    // Connect ngrok tunnel
-    let url = await ngrok.connect(process.env.PORT);
-    console.log(`ngrok tunnel set up at url: ${url}`);
   });
 
 app.engine("ejs", ejsMate);
